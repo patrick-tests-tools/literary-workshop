@@ -296,6 +296,190 @@ This is not a refusal of meaning. It is a different model of meaning — one tha
         analysis: `This is one of the great endings in short fiction. It gives the reader exactly what has been withheld — the recognition of love, the acknowledgement of its reality — and simultaneously refuses to resolve it. "The most complicated and difficult part was only just beginning." The story ends by naming what it cannot show us: the whole of their lives. The ellipsis is the form. The opening is the meaning.`
       }
     }
+  ],
+  voice: [
+    {
+      id: "v1",
+      title: "Narrative Distance",
+      subtitle: "How close the narrator sits to the character",
+      body: `Narrative distance is the space between the narrator and the character's consciousness. At maximum distance, the narrator observes from outside — reporting behaviour, describing surfaces, offering no access to inner life. At minimum distance, the narrator has dissolved into the character's mind: we hear thought in the character's own rhythms, see the world through their distortions, feel their emotions without being told what they are.
+
+Literary fiction moves along this spectrum, often within a single paragraph. The writer who understands distance can zoom in to make the reader feel something intensely, then pull back to let irony operate — to show the gap between what the character believes and what is true.
+
+The most dangerous position is an unexamined one. When writers don't think about distance, they drift: slipping into the character's head for one sentence, pulling back to authorial observation in the next, without purpose. The reader feels the inconsistency as instability rather than technique.
+
+Distance is not the same as point of view. Third person can be extremely close. First person can be surprisingly distant — a narrator who doesn't understand their own story is a narrator at a remove from themselves.`,
+      principle: "Know at every moment how close you are to your character's consciousness — and move deliberately, not by accident.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `He was under forty, but he had a daughter already twelve years old, and two sons at school. He had been married young, when he was a student in his second year, and by now his wife seemed half as old again as he. She was a tall, erect woman with dark eyebrows, staid and dignified and, as she said of herself, intellectual. She read a great deal, used phonetic spelling, called her husband, not Dmitri, but Dimitri, and he secretly considered her unintelligent, narrow, inelegant, was afraid of her, and did not like to be at home.`,
+        analysis: `Watch the shift in distance. The opening sentences are far back — biographical fact delivered neutrally: ages, a daughter, two sons, a marriage. Then the wife's self-description: "as she said of herself, intellectual." The narrator has stepped back further still, quoting her own word to mark it as hers, not theirs. Then the pivot: "he secretly considered her unintelligent, narrow, inelegant." Suddenly we are inside Gurov's private judgment. The distance has collapsed in a single clause. Then: "was afraid of her, and did not like to be at home." Back to flat statement, but now charged — because we know the fear is secret, is his, is what he cannot say aloud. Chekhov moves the distance without announcing it, and the movement creates the irony.`
+      }
+    },
+    {
+      id: "v2",
+      title: "Free Indirect Discourse",
+      subtitle: "The technique that defines literary fiction",
+      body: `Free indirect discourse is the mode in which the narrator speaks in the character's voice without quotation marks, without "she thought" or "he felt." It is third person in grammar, first person in feeling. The narrator and character occupy the same sentence.
+
+It is the defining technique of literary fiction because it allows the writer to do something no other form can: to show a character's inner life from the inside, while retaining the narrator's capacity for irony. The narrator can present a character's delusion in the character's own terms, without endorsing it. The reader simultaneously inhabits and watches.
+
+The tell is in diction and syntax. Free indirect discourse uses the character's vocabulary, their sentence rhythms, their emotional logic — not the narrator's. When Jane Austen writes "It was a truth universally acknowledged," the irony comes from the gap between the grandiose diction ("universally acknowledged") and the smallness of what follows. The narrative voice has adopted the language of the world it is describing — and in doing so, exposed it.
+
+Learning to write free indirect discourse means learning to hear the difference between your voice and your character's voice — and then deliberately blurring that line.`,
+      principle: "Free indirect discourse lets you inhabit a character's consciousness while keeping the narrator's ironic distance. The technique lives in diction: use the character's words, not yours.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `And after all the weather was ideal. They could not have had a more perfect day for a garden-party if they had ordered it. Windless, warm, the sky without a cloud. Only the blue was veiled with a haze of light gold, as it is sometimes in early summer. The gardener had been up since dawn, mowing the lawns and sweeping them, until the grass and the dark flat rosettes where the daisy plants had been seemed to shine. As for the roses, you could not help feeling they understood that roses are the only flowers that impress people at garden-parties; the only flowers that everybody is certain of knowing.`,
+        analysis: `"And after all the weather was ideal." The "and after all" is not the narrator's — it is the family's. It is the voice of people who had worried, who had contingency plans, who now feel vindicated. "They could not have had a more perfect day for a garden-party if they had ordered it" — again, the family's logic, their transactional relationship with nature. "The only flowers that everybody is certain of knowing" — whose snobbery is this? The roses', allegedly. But it is the family's. Mansfield has slipped the family's class consciousness into the narrator's description of flowers. That is free indirect discourse at its most precise: the narrator wearing the character's values like a mask, and the reader watching the mask.`
+      }
+    },
+    {
+      id: "v3",
+      title: "Diction as Character",
+      subtitle: "The words a character notices reveal who they are",
+      body: `Voice is not only about syntax and rhythm. It is about which words appear — and which don't. Every consciousness has a vocabulary, and that vocabulary is a portrait.
+
+A character who notices the "efficient" layout of a room is different from one who notices the "cold" layout of the same room. A character who thinks in legal terms — clauses, obligations, precedent — inhabits a different world from one who thinks in textures and colours. The words your character reaches for are not neutral; they reveal how they have been shaped, what they have been trained to notice, what they cannot see.
+
+This is why ventriloquism is the core skill of literary fiction. The writer must think in the character's vocabulary, not their own. Every time a word from the writer's own habitual register sneaks in — a word the character would never use, would never even think — the illusion breaks. The reader feels the author behind the page.
+
+The discipline: when you are in close third person or first person, go through your draft and mark every word that belongs to you, not to them. Replace it with their word. If they don't have a word for something — if their vocabulary has a gap — that gap is information.`,
+      principle: "The words a character reaches for are a portrait. Write in their vocabulary, not yours — and treat the gaps in their vocabulary as meaning.",
+      example: {
+        source: "Carver, 'Cathedral'",
+        text: `This blind man, an old friend of my wife's, he was on his way to spend the night. His wife had died. So he was visiting the dead wife's relatives in Connecticut. He called my wife from his in-laws'. Arrangements were made. He would come by train, a five-hour trip, and my wife would meet him at the station. She hadn't seen him since she worked for him one summer in Seattle ten years ago. But she and the blind man had kept in touch. They made tapes and mailed them back and forth.`,
+        analysis: `"This blind man" — not "Robert" or "him." The narrator won't give the man his name yet; he is a category, a problem, a thing the narrator has not yet agreed to see as a person. "Arrangements were made" — passive, as if the narrator had no part in it and wants no part in it. "His wife had died. So he was visiting the dead wife's relatives." The logic is functional, even bureaucratic — no sympathy in the syntax. "They made tapes and mailed them back and forth" — the narrator cannot quite conceive of the intimacy this represents. Every word choice is the narrator's limitation on the page. Carver never tells us the narrator is closed off and quietly threatened. He just lets him speak.`
+      }
+    },
+    {
+      id: "v4",
+      title: "Register and Rupture",
+      subtitle: "When the voice shifts, something is happening",
+      body: `Every narrative voice has a register — a consistent level of diction, formality, and emotional temperature. Literary prose earns a great deal of its power from ruptures in that register: moments when the voice suddenly drops into the colloquial, or rises into the elevated, or breaks into something raw and unguarded. The rupture signals: something has changed. The character cannot maintain their usual relation to language.
+
+A narrator who speaks in careful, controlled sentences and then produces a fragment — a sentence that just stops — has broken under some pressure. A character whose narration has been sardonic and defended and who suddenly uses a word of naked tenderness has revealed something they didn't intend to.
+
+The writer controls this. Register is not an accident of style; it is a tool. The question to ask of any passage is: what register is this voice in, and what would it mean to break from it here? The moment of rupture is often the moment of maximum emotional truth.
+
+Avoid the mistake of writing at a single register throughout. Prose that never shifts feels airless, controlled in the wrong way — the writer's control rather than the character's, which are different things.`,
+      principle: "Establish a register, then break it deliberately. The rupture is where the emotional truth lives.",
+      example: {
+        source: "Didion, 'The Year of Magical Thinking'",
+        text: `Life changes fast. Life changes in the instant. You sit down to dinner and life as you have known it ends. The question of self-pity.`,
+        analysis: `The opening sentences are stripped, declarative, almost clinical — a voice that has learned to speak about catastrophe in short statements because longer ones would break. "Life changes fast." Three words. "Life changes in the instant." Four. "You sit down to dinner and life as you have known it ends." This is the rupture — a longer sentence, but still controlled, passive almost. And then: "The question of self-pity." A fragment. Not even a question. The voice has stumbled. The syntactic break performs the mental break. In four sentences Didion establishes the register (controlled grief, short declarative) and ruptures it (the fragment that isn't a sentence). The reader feels the rupture as the narrator's loss of footing. Everything in the book flows from that stumble.`
+      }
+    },
+    {
+      id: "v5",
+      title: "The Unreliable Voice",
+      subtitle: "When the narrator doesn't know their own story",
+      body: `The most powerful voices in literary fiction are often the ones that don't fully understand what they are saying. The narrator who insists they are fine while every detail they describe reveals otherwise. The narrator whose loyalty to one interpretation of events makes them blind to another. The narrator who is telling you one story while living a different one.
+
+This is not the same as the cheap "unreliable narrator" trick where the reader is meant to feel clever for catching the narrator out. That is a plot device. What literary fiction does is more interesting: it presents a consciousness that is genuinely limited in the way all consciousnesses are limited — by desire, by fear, by the stories we need to believe about ourselves. The reader doesn't catch the narrator; they simply see more than the narrator can.
+
+The technique requires the writer to hold two levels simultaneously: what the narrator thinks is happening, and what is actually happening. The gap between those two levels is where the story lives. Every detail the narrator includes, every detail they omit, every judgment they make and don't question — all of it is evidence for the reader to read against the narrator's grain.
+
+This is difficult. It requires the writer to fully inhabit a limited consciousness while remaining aware of its limits from outside.`,
+      principle: "The gap between what a narrator believes and what is true is where literary fiction does its deepest work. Hold both levels — the character's version and the real one — simultaneously.",
+      example: {
+        source: "Carver, 'Cathedral'",
+        text: `I wasn't enthusiastic about his visit. He was no one I knew. And his being blind bothered me. My idea of blindness came from the movies. In the movies, the blind moved slowly and never laughed. Sometimes they were led by seeing-eye dogs. A blind man in my house was not something I looked forward to.`,
+        analysis: `The narrator is telling us he is not prejudiced — just realistic, just working from what he knows. He is explaining himself to us, which is already a signal: people who are comfortable with their feelings don't explain them. "My idea of blindness came from the movies" — he says this without embarrassment, as though it is a reasonable source. "In the movies, the blind moved slowly and never laughed" — the narrator has no idea how much this reveals. He is not a bad man by his own account; he is a man who has not examined himself. Carver gives us full access to that non-examination. The reader sees the limitation; the narrator presents it as information.`
+      }
+    }
+  ],
+  dialogue: [
+    {
+      id: "d1",
+      title: "What Dialogue Is Actually For",
+      subtitle: "Not information — pressure",
+      body: `Dialogue in literary fiction is not a delivery mechanism for information. That is its least interesting function. Characters can exchange facts in dialogue, but if the exchange of facts is all that is happening, the scene is working below its capacity.
+
+Dialogue is for pressure. Two people talking are two people wanting things, and the conversation is the field where those wants collide, deflect, accommodate, or refuse each other. Every line of dialogue is a move — an approach, a withdrawal, a test, an avoidance. The reader should be able to feel what is at stake in the exchange even when the subject of conversation is entirely neutral.
+
+The test: cover up the dialogue tags and action beats, read only what the characters say to each other, and ask — can you feel the relationship? The power between them, the history, the thing neither of them is saying? If the answer is no — if the dialogue could belong to any two people — it is not working.
+
+The common mistake is to write dialogue that is too sensible. Real conversation, and fictional conversation that works, is full of non-sequiturs, deflections, half-answers, questions answered with questions. People in conversation are almost never trying to have the conversation they are nominally having.`,
+      principle: "Dialogue is pressure, not information. Every line is a move. What does this character want from the other person right now — and are they asking for it directly or sideways?",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `"Let us go away from here," she said. "Let us go away from here." "Where?" "Where you will — anywhere." They went and spent two hours standing on the platform at Oreanda. Not far from them there was a steamer making toward the landing with the lights extinguished in the early dawn, and they watched it with very little being said.`,
+        analysis: `"Where you will — anywhere." This is not vagueness — it is total willingness, surrender, the opposite of the life she has been living. The conversation is three lines and it contains an entire emotional history: the desperation of a woman who has given herself over and doesn't know where it leads. Chekhov doesn't have them discuss this. He has them say almost nothing — and then stand for two hours watching a steamer in silence. What they are not saying fills the scene. The "very little being said" is the subject of the passage.`
+      }
+    },
+    {
+      id: "d2",
+      title: "Subtext in Dialogue",
+      subtitle: "The conversation beneath the conversation",
+      body: `Subtext is the conversation that is actually happening underneath the conversation that appears to be happening. Two characters arguing about who forgot to pay a bill may actually be fighting about who is failing whom in the marriage. Two characters discussing a piece of furniture may actually be negotiating the end of a relationship. The surface subject is not the real subject.
+
+This is not a trick or a writerly affectation. It is how people actually talk when something is at stake and they are not ready — or not able — to say it directly. The oblique approach, the displacement onto an adjacent subject, the sudden change of topic that is not really a change at all: these are the moves people make when the real conversation is too dangerous or too painful to have.
+
+The writer's job is to write the surface conversation with precision — the actual words, the actual subject — while ensuring the reader can feel the real subject pressing through. The surface must be plausible; the subtext must be legible. If the surface is too thin, the subtext becomes obvious and loses its power. If the surface is too thick, the subtext disappears.
+
+The technique: know, for every scene with dialogue, what the characters cannot say. Then write the scene in which they don't say it.`,
+      principle: "Know what your characters cannot say. Then write the scene in which they don't say it — but in which the reader feels it at every line.",
+      example: {
+        source: "Carver, 'What We Talk About When We Talk About Love'",
+        text: `"The real love," Mel said. "I mean to tell you this happened to me. I was going to tell you." "You can see how much I loved her now," Terri said. "Go on with your story," I said to Mel. "What happened?" Laura said. Mel picked up his glass of gin and swallowed some. He looked at us for a moment and then went on. "What that man in the story did —" Mel said, "— he tried to kill her." Terri said. "He did," Mel said. "Terri's right." "How do you know she didn't love him?" Terri said.`,
+        analysis: `On the surface: an anecdote about a former relationship, a question about love. Underneath: Terri defending her abusive ex-husband Ed as a man who loved her, Mel unable to accept that love and violence can coexist in the same person, both of them talking about their own marriage through the story of strangers. "How do you know she didn't love him?" is not a question about the woman in the anecdote. It is a demand that Mel recognise something about Terri herself. No one names this. The conversation stays on the surface of other people's lives. The subtext lives in who speaks when, and what they choose to defend.`
+      }
+    },
+    {
+      id: "d3",
+      title: "Speech Patterns as Character",
+      subtitle: "How people talk is who they are",
+      body: `Every character should speak differently — not through dialect or quirk, but through the underlying logic of how they use language. One character deflects with questions. Another reasserts the same point in different words when they feel threatened. One trails off; another is relentlessly complete. One reaches for abstraction when emotion gets close; another becomes suddenly concrete and practical.
+
+These patterns are not decoration. They are characterisation by other means — and often more reliable characterisation than direct description, because the reader assembles it themselves from evidence rather than being told.
+
+The discipline is harder than it sounds. Writers have their own speech patterns, their own habitual verbal moves, and those patterns bleed into every character if left unchecked. The character who is not you will talk like you unless you actively resist it. Resistance means knowing, before you write a scene, how each character in it uses language — what they reach for, what they avoid, what their sentences do when they are under pressure.
+
+Interruption, sentence length, the ratio of questions to statements, the tendency to qualify or to assert — all of these are signature. Make each character's signature distinct enough that a reader could identify who is speaking without a tag.`,
+      principle: "Each character's relationship to language is a portrait of their relationship to the world. Make every voice distinct enough to stand without a tag.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `"It's wrong," she said. "You will be the first to despise me now." There was a water-melon on the table. Gurov cut himself a slice and began eating it without haste. There followed at least half an hour of silence. Anna Sergeyevna was touching; there was about her the purity of a good, simple woman who had seen little of life. The solitary candle burning on the table threw a faint light on her face, yet it was clear that she was very unhappy.`,
+        analysis: `Anna's two sentences reveal everything: she reaches immediately for guilt and pre-emptive shame, she assumes the worst of him, she narrates her own fall. "You will be the first to despise me now" — she is already constructing the story of her ruin, handing Gurov the role of judge. It is the speech pattern of someone who has internalised exactly the values that will condemn her. Gurov says nothing. He eats watermelon. The contrast between her verbal self-accusation and his physical indifference is the scene's entire emotional argument, and it is carried entirely by what one character says and what the other does not.`
+      }
+    },
+    {
+      id: "d4",
+      title: "Action Beats and the Body in Dialogue",
+      subtitle: "What the body does while people talk",
+      body: `Dialogue does not happen in a vacuum. Characters have bodies that are doing things while they speak — and what the body does is not neutral. The gesture, the object handled, the physical movement or stillness: these are part of the dialogue even when they have nothing to do with the words.
+
+The action beat — the brief physical action that accompanies or interrupts speech — does several things. It grounds the scene in physical reality, prevents the dialogue from floating free of the world. It provides rhythm: a pause, a breath, a shift in pace. And it carries emotional information that the dialogue itself cannot carry, or is refusing to carry.
+
+A character who speaks warmly while turning away from the person they are speaking to. A character who goes very still when asked a difficult question. A character who begins performing a routine task — making coffee, folding a newspaper — at precisely the moment the conversation becomes dangerous. The body speaks what the voice cannot.
+
+The mistake is using action beats only as punctuation — "he said, picking up his glass" — without asking what the action means. Every action beat should be chosen because it adds something: a layer of emotion, a piece of character, a counterpoint to what is being said.`,
+      principle: "What the body does during dialogue carries emotional information the words cannot or will not carry. Choose every action beat for what it adds, not for how it breaks up the dialogue.",
+      example: {
+        source: "Carver, 'Cathedral'",
+        text: `My wife finally took her eyes off the blind man and looked at me. I had the feeling she didn't like what she saw. I shrugged. I've never met, or personally known, anyone who was blind. This blind man was late forties, a heavy-set, balding man with stooped shoulders, as if he carried a great weight there. He wore brown slacks, brown shoes, a light brown shirt, a tie, a sports coat. Spiffy. He also had a full beard. But he didn't use a cane and he wore no dark glasses. I'd always thought dark glasses were a must for the blind. Part of me wished he had a pair.`,
+        analysis: `"My wife finally took her eyes off the blind man and looked at me. I had the feeling she didn't like what she saw. I shrugged." The shrug is the action beat — and it is devastating. It is the narrator's total response to being seen clearly by his wife: he shrugs. It contains everything about this marriage, this man's defended refusal to be accountable. Then his narration moves immediately to cataloguing Robert's appearance in careful, almost hostile detail. The physical inventory is itself an action — the narrator studying, measuring, refusing to feel. The body's retreat into observation is the scene's emotional argument.`
+      }
+    },
+    {
+      id: "d5",
+      title: "Silence and the Unfinished Line",
+      subtitle: "What dialogue refuses to complete",
+      body: `The most powerful moment in a dialogue scene is often the moment the dialogue stops — or the moment a sentence begins and doesn't finish. Silence in fiction is not the absence of writing; it is a presence. The reader fills it. What the reader fills it with is determined entirely by what came immediately before.
+
+The unfinished line — the sentence that trails into a dash or an ellipsis, the question that is asked and not answered, the response that addresses something other than what was asked — creates pressure by refusing release. The reader leans forward. The character has approached something and turned away, or has been interrupted by the event or object or silence that the writer places in the gap.
+
+Dialogue that always finishes its sentences, always answers its questions, always completes its exchanges is dialogue that has been tidied into false coherence. Real conversation breaks off. People talk past each other. Questions go unanswered not because of rudeness but because the person asked cannot find, or will not find, or does not have the language for, the answer.
+
+The formal technique: after a line of dialogue that approaches something true, put silence. Not explanation. Not another line that explains the silence. Just the gap — rendered in physical action, in description, in the next scene beginning — and let the reader hear it.`,
+      principle: "Silence after dialogue is not absence — it is presence. Place it after the line that approaches the truth, and let the reader fill it.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `One evening he was coming out of the doctors' club with an official with whom he had been playing cards, he could not resist saying: "If only you knew what a fascinating woman I made the acquaintance of in Yalta!" The official got into his sledge and was driving away, but turned suddenly and shouted: "Dmitri Dmitritch!" "What?" "You were right this evening: the sturgeon was a bit too strong!"`,
+        analysis: `Gurov makes the only attempt in the story to speak his love to another person. He is answered with a comment about fish. But notice what Chekhov does with the structure: Gurov's opening — "If only you knew" — is itself an incomplete line. It is not a confession; it is the approach to a confession, the sentence before the sentence that would matter. And then the official drives away, and turns back, and the response is about sturgeon. The silence between what Gurov wanted to say and what was heard is the entirety of his isolation. Chekhov doesn't fill it. He just shows us what it sounds like when no one is listening.`
+      }
+    }
   ]
 };
 
