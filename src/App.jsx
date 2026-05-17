@@ -815,17 +815,24 @@ function StepParaExercise({ apiKey, model, onXp }) {
   const setDraft = (val) => setDrafts(d => ({ ...d, [step.id]: val }));
 
   const getFeedback = async () => {
-    if (!draft.trim() || draft.trim().length < 10) return;
-    if (!apiKey) { setError("Add your Groq API key in Settings first."); return; }
-    setLoading(true); setError(null);
-    try {
+  if (!draft.trim() || draft.trim().length < 10) return;
+  if (!apiKey) { setError("Add your Groq API key in Settings first."); return; }
+  setLoading(true); setError(null);
+  try {
+    if (stepIdx === PARA_STEPS.length - 1) {
+      const raw = await callGroq(apiKey, model, FEEDBACK_SYSTEM, `Exercise: "Step-by-Step Paragraph"\nInstruction: Final paragraph — all five elements applied.\nCriteria: Movement from opening to close; emotion implied not stated; rhythm varied; no explanation of what the paragraph shows.\n\nSubmission:\n\n${draft}`);
+      const data = parseJSON(raw);
+      setFeedbacks(f => ({ ...f, [step.id]: data }));
+      onXp(data.total ? Math.round(data.total / 2) : 10, { ...data, central_issue: data.central_issue });
+    } else {
       const raw = await callGroq(apiKey, model, STEP_FEEDBACK_SYSTEM, `Step: "${step.title}"\nGoal: ${step.instruction}\n\nSubmission:\n\n${draft}`);
       const data = parseJSON(raw);
       setFeedbacks(f => ({ ...f, [step.id]: data }));
       onXp(data.score ? data.score * 2 : 10, null);
-    } catch (e) { setError(e.message || "Feedback failed."); }
-    setLoading(false);
-  };
+    }
+  } catch (e) { setError(e.message || "Feedback failed."); }
+  setLoading(false);
+};
 
   const wc = draft.trim().split(/\s+/).filter(Boolean).length;
 
@@ -880,19 +887,25 @@ function StepParaExercise({ apiKey, model, onXp }) {
       {error && <div style={{ background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.2)", borderRadius: 3, padding: "14px 18px", fontSize: 13, color: "#f87171" }}>{error}</div>}
 
       {feedback && (
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ fontFamily: "'Lora', serif", fontSize: 28, color: feedback.score >= 8 ? "#4ade80" : feedback.score >= 5 ? G : "#f87171" }}>{feedback.score}</div>
-            <div style={{ fontSize: 11, color: DIM }}>/10 for this step</div>
-          </div>
-          {[["Working", feedback.working, "#4ade80"], ["Issue", feedback.issue, "#f87171"], ["Carry forward", feedback.next, G]].map(([label, content, color]) => content && (
-            <div key={label} style={{ borderLeft: `2px solid ${color}`, paddingLeft: 16 }}>
-              <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase", marginBottom: 4 }}>{label}</div>
-              <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: "#b0a898" }}>{content}</div>
-            </div>
-          ))}
+  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    {stepIdx === PARA_STEPS.length - 1 ? (
+      <FeedbackBlock data={feedback} />
+    ) : (
+      <>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ fontFamily: "'Lora', serif", fontSize: 28, color: feedback.score >= 8 ? "#4ade80" : feedback.score >= 5 ? G : "#f87171" }}>{feedback.score}</div>
+          <div style={{ fontSize: 11, color: DIM }}>/10 for this step</div>
         </div>
-      )}
+        {[["Working", feedback.working, "#4ade80"], ["Issue", feedback.issue, "#f87171"], ["Carry forward", feedback.next, G]].map(([label, content, color]) => content && (
+          <div key={label} style={{ borderLeft: `2px solid ${color}`, paddingLeft: 16 }}>
+            <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase", marginBottom: 4 }}>{label}</div>
+            <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: "#b0a898" }}>{content}</div>
+          </div>
+        ))}
+      </>
+    )}
+  </div>
+)}
 
       {stepIdx === PARA_STEPS.length - 1 && feedback && (
         <div style={{ background: "rgba(212,183,120,0.06)", border: `1px solid rgba(212,183,120,0.2)`, borderRadius: 3, padding: "20px", textAlign: "center" }}>
