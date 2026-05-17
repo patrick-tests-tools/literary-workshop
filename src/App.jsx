@@ -1,12 +1,345 @@
 import { useState } from "react";
 
-// ─── CONSTANTS ───────────────────────────────────────────────────────────────
-
 const G = "#d4b778";
 const DIM = "#5a5040";
 const MID = "#c8c0b0";
 const DARK = "#0e0c0a";
 const BORDER = "rgba(255,255,255,0.08)";
+
+// ─── LESSONS DATA ─────────────────────────────────────────────────────────────
+
+const LESSONS = {
+  paragraph: [
+    {
+      id: "p1",
+      title: "The Paragraph as Unit of Attention",
+      subtitle: "What a paragraph actually is",
+      body: `A paragraph is not a formatting block. It is not a visual rest for the eye. It is a container for one movement of attention — a single gesture of the mind that begins somewhere and arrives somewhere different.
+
+Every paragraph makes a promise in its opening sentence and either fulfils or complicates that promise by its last. When you break to a new paragraph, you signal: the attention has moved. Something has shifted — in focus, in register, in time, in emotional temperature.
+
+The most common weakness in apprentice literary fiction is the paragraph that begins and ends in the same place. Sentences accumulate without going anywhere. The paragraph sits rather than moves.`,
+      principle: "A paragraph should arrive somewhere different from where it started — in understanding, in emotional register, or in what the reader now knows.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `One evening he was dining in the gardens, and the lady in the béret came up slowly to take the next table. Her expression, her gait, her dress, and the way she did her hair told him that she was a lady, that she was married, that she was in Yalta for the first time and alone, and that she was dull there. The stories told of the immorality in such places as Yalta are to a great extent untrue; he despised them, and knew that such stories were for the most part made up by persons who would themselves have been glad to sin if they had been able; but when the lady sat down at the next table three paces from him, he remembered these tales of easy conquests, of trips to the mountains, and the tempting thought of a swift, fleeting love affair, a romance with an unknown woman, whose name he did not know, suddenly took possession of him.`,
+        analysis: `Watch the movement. The paragraph opens with a man observing a woman: cool, cataloguing, almost clinical. By the last sentence he has been overtaken — the careful observer has become a man seized by desire. The paragraph begins in detachment and ends in possession. Notice also how Chekhov refuses to announce this shift: he lets the paragraph perform it.`
+      }
+    },
+    {
+      id: "p2",
+      title: "General to Particular",
+      subtitle: "The deepening paragraph",
+      body: `The most reliable paragraph shape in literary fiction moves from a general claim to particular evidence. It states something true about the world or the character, then proves it through the concrete and specific.
+
+This is not a rule. It is a pressure system. The general opening creates expectation; the particular details satisfy and deepen it. The reader feels the paragraph doing something — landing, earning its claim.
+
+The opposite also works: particular details accumulating toward a general truth. But what almost never works is the paragraph that stays general throughout — abstract emotion, stated feeling, unearned observation. Without the particular, there is nothing to hold onto.`,
+      principle: "Move from claim to evidence, or from detail to meaning. Never stay at one altitude for the whole paragraph.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `And after all the weather was ideal. They could not have had a more perfect day for a garden-party if they had ordered it. Windless, warm, the sky without a cloud. Only the blue was veiled with a haze of light gold, as it is sometimes in early summer. The gardener had been up since dawn, mowing the lawns and sweeping them, until the grass and the dark flat rosettes where the daisy plants had been seemed to shine. As for the roses, you could not help feeling they understood that roses are the only flowers that impress people at garden-parties; the only flowers that everybody is certain of knowing. Hundreds, yes, literally hundreds, had come out in a single night; the green bushes bowed down as though they had been visited by archangels.`,
+        analysis: `The paragraph opens with a claim — ideal weather — then earns it through accumulation: windless, warm, cloudless, a haze of light gold. But Mansfield doesn't stop at weather. The paragraph deepens into the roses, and here the movement becomes something else: the consciousness of the family bleeding into the description. The roses "understood." The green bushes bowed "as though visited by archangels." The particular details have become charged with class and vanity. The paragraph ends further from where it began than you noticed.`
+      }
+    },
+    {
+      id: "p3",
+      title: "Suggestion Over Explanation",
+      subtitle: "What the paragraph must not say",
+      body: `The most damaging habit in apprentice literary fiction is explaining what the prose has already shown. The paragraph shows a character unable to meet someone's eyes, trembling hands, a voice that goes flat — and then adds: "He was terrified."
+
+That last sentence undoes the work. The reader has already felt the terror. Naming it breaks the spell and signals that the writer doesn't trust the reader.
+
+Literary fiction operates through implication. The reader participates — assembles the emotion from the details you give them. When you name the emotion, you take that participation away. The reader becomes passive. The prose becomes explanation rather than experience.
+
+The principle: if the paragraph is doing its job, the emotional label is unnecessary. If you find yourself writing "he felt," "she realised," "it seemed to him" — stop, and ask what concrete detail would do that work instead.`,
+      principle: "Name the object, the gesture, the room. Let the reader name the feeling.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `There was a water-melon on the table. Gurov cut himself a slice and began eating it without haste. There followed at least half an hour of silence. Anna Sergeyevna was touching; there was about her the purity of a good, simple woman who had seen little of life.`,
+        analysis: `Anna has just given herself to Gurov for the first time. She is devastated. He cuts a slice of watermelon and eats it without haste. Chekhov does not write that Gurov felt nothing, that he was callous and unmoved. He gives us the watermelon. The unhurried eating. The half hour of silence. The reader assembles the cruelty from these details — and feels it more keenly because they assembled it themselves. The final sentence on Anna is tender, not ironic. The irony lives between the two observations, in the silence the paragraph refuses to fill.`
+      }
+    },
+    {
+      id: "p4",
+      title: "Rhythm and Breath",
+      subtitle: "How a paragraph sounds",
+      body: `Paragraphs have rhythm. The alternation of long and short sentences creates pace: long sentences immerse, short sentences isolate. A paragraph that never varies its sentence length becomes monotonous regardless of its content.
+
+Short sentences hit. They land and stop. They create weight, finality, shock. Long sentences — with their accumulating clauses, their insistence on adding and modifying and turning back on themselves before they finally release you — create momentum and the feeling of a mind in motion, following a thought wherever it goes.
+
+The most common apprentice mistake is the paragraph where every sentence is the same length. The prose moves at a single speed. Nothing accelerates or slows. Nothing hits.
+
+Read your paragraphs aloud. Where do you run out of breath? Where does it feel mechanical? The paragraph's music is inseparable from its meaning.`,
+      principle: "Vary sentence length deliberately. Short sentences create weight. Long sentences create immersion. Never stay at one speed.",
+      example: {
+        source: "Katherine Mansfield, 'At the Bay'",
+        text: `A heavy dew had fallen. The grass was blue. Big drops hung on the bushes and just did not fall; the silvery, fluffy toi-toi was limp on its long stalks, and all the marigolds and the pinks in the bungalow gardens were bowed to the earth with wetness. Drenched were the cold fuchsias, round pearls of dew lay on the flat nasturtium leaves. It looked as though the sea had beaten up softly in the darkness, as though one immense wave had come rippling, rippling — how far?`,
+        analysis: `Short. Short. Then long, accumulating, listing. Then inverted syntax for compression. Then a long sentence that ripples — that literally performs rippling through its rhythm — and breaks off into a question. Mansfield is composing sound. The short sentences at the start feel like drops of dew: small, discrete, complete. The long sentence feels like water spreading. The final question opens out into silence. This is prose that knows what rhythm is for.`
+      }
+    },
+    {
+      id: "p5",
+      title: "The Step-by-Step Paragraph",
+      subtitle: "Build one element at a time",
+      body: `The hardest lesson in paragraph craft is that you cannot fix everything at once. Most writers, when they revise, try to improve everything simultaneously — the rhythm, the detail, the suggestion, the movement. The paragraph becomes a negotiation between too many competing demands, and it collapses into compromise.
+
+The better approach: write the paragraph through one lens at a time. First pass: what is this paragraph's movement? Where does it begin, where does it need to arrive? Second pass: have you explained anything that could be shown? Cut the emotional labels. Third pass: read it aloud. Where does the rhythm break?
+
+The Write section contains a Step by Step exercise that walks you through a paragraph one element at a time — not as a mechanical process, but as a way of learning to hear what a paragraph actually needs.`,
+      principle: "Revise through one lens at a time. The writer who tries to fix everything at once usually fixes nothing.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `He was under forty, but he had a daughter already twelve years old, and two sons at school. He had been married young, when he was a student in his second year, and by now his wife seemed half as old again as he. She was a tall, erect woman with dark eyebrows, staid and dignified and, as she said of herself, intellectual. She read a great deal, used phonetic spelling, called her husband, not Dmitri, but Dimitri, and he secretly considered her unintelligent, narrow, inelegant, was afraid of her, and did not like to be at home.`,
+        analysis: `Notice the cascade. Each sentence arrives out of the previous one. The daughter, the sons, the wife — factual, accumulating. Then the wife's self-description, then Gurov's private reality — and this is where the paragraph completes its movement, arriving at the secret interior: "was afraid of her, and did not like to be at home." Seven words at the end of a long sentence. The paragraph has moved from biographical fact to the hidden emotional core of a marriage. And notice: Chekhov never writes "he was unhappy."`
+      }
+    }
+  ],
+  sentence: [
+    {
+      id: "s1",
+      title: "The Sentence as Commitment",
+      subtitle: "Every sentence does a job or it doesn't belong",
+      body: `Every sentence in literary fiction must earn its place. The question is not "Is this sentence well-written?" but "What is this sentence doing that could not be done without it?"
+
+A sentence can advance action. It can deepen character. It can shift atmosphere. It can land a piece of information. It can create rhythm. But it must do at least one of these things — and the best sentences do two or three simultaneously.
+
+The sentences that don't earn their place are easy to spot in revision: they feel like throat-clearing. They restate what the previous sentence already said. They describe something the reader has already inferred. They hold the paragraph in place when the paragraph needs to move.
+
+Chekhov's advice was ruthless: cut the first and last paragraphs, where writers tend to warm up and cool down. The same principle applies to sentences within a paragraph.`,
+      principle: "A sentence that only does one job is a candidate for cutting. A sentence that does nothing is already dead.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `She glanced at him and turned pale, then glanced again with horror, unable to believe her eyes, and tightly gripped the fan and the lorgnette in her hands, evidently struggling with herself not to faint.`,
+        analysis: `Count what this single sentence does: it shows recognition (the glance), shock (turned pale), disbelief (glanced again with horror), physical response to emotional extremity (gripped the fan), and inner effort (struggling not to faint). Five things in one sentence. None of them named as an emotion — all rendered as physical event. Every element earns its place because every element adds something the others don't.`
+      }
+    },
+    {
+      id: "s2",
+      title: "Sentence Length and Meaning",
+      subtitle: "The length of a sentence is not neutral",
+      body: `In literary fiction, how long a sentence is carries meaning. A short sentence creates emphasis, finality, isolation. It says: this is where the paragraph stops and thinks. A long sentence creates immersion, momentum, the feeling of consciousness following a thread it cannot quite let go of.
+
+The mistake is treating sentence length as a stylistic preference rather than a semantic choice. When you write a long sentence, you are asking the reader to stay inside something — an emotion, a thought, a scene — without releasing them. When you write a short sentence, you are releasing them, letting them feel the impact of what just happened.
+
+The most powerful use of the short sentence is after a long one. The long sentence creates pressure; the short sentence detonates it.`,
+      principle: "Sentence length creates emotional pacing. The short sentence after a long one is one of prose fiction's most reliable instruments.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `It was just growing dusky as Laura shut their garden gates. A big dog ran by like a shadow. The road gleamed white, and down below in the hollow the little cottages were in deep shade. How quiet it seemed after the afternoon. Here she was going down the hill to somewhere where a man lay dead, and she couldn't realize it. Why couldn't she?`,
+        analysis: `Mansfield moves between short declarative sentences and longer ones with precision. "A big dog ran by like a shadow." Complete. Simple. Isolating. Then a longer sentence establishing the shift from the party's world to the workers' world. Then "How quiet it seemed after the afternoon" — short, a beat of consciousness. Then the long sentence of unreality. Then the shortest, most devastating: "Why couldn't she?" Three words. The question hanging. The short sentence performs Laura's incomprehension, her inability to complete a thought.`
+      }
+    },
+    {
+      id: "s3",
+      title: "The Detail That Does Two Jobs",
+      subtitle: "Chekhov's principle of the multifunctional detail",
+      body: `Chekhov's famous principle — if there's a gun on the wall in Act One, it must fire in Act Three — is often misread as a rule about plot. It is really a principle about economy. Every element in a story must justify its presence by doing more than one thing.
+
+Applied to the sentence: every detail should simultaneously show character AND advance atmosphere OR carry thematic weight. A detail that only describes — that is only accurate — is a detail that isn't working hard enough.
+
+The object that a character notices reveals what they are. The room that a character moves through reveals their relationship to the world. The weather that a character registers reveals their emotional state. Ask of every detail: what else is this doing beyond what it appears to be doing?`,
+      principle: "A detail that only describes is a detail at rest. Make it work. What does it reveal? What does it charge?",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `A young man with small side-whiskers, tall and stooping, came in with Anna Sergeyevna and sat down beside her; he bent his head at every step and seemed to be continually bowing. Most likely this was the husband whom at Yalta, in a rush of bitter feeling, she had called a flunkey. And there really was in his long figure, his side-whiskers, and the small bald patch on his head, something of the flunkey's obsequiousness; his smile was sugary, and in his buttonhole there was some badge of distinction like the number on a waiter.`,
+        analysis: `Every detail here is doing two jobs. The stooping, the continual bowing: physically accurate AND character revelation — servility, smallness. The small bald patch: physical detail AND tone, slightly comic and diminishing. The sugary smile: character AND class. The badge like a waiter's number: the most devastating, because it takes the one marker of his distinction and turns it into its opposite — servility made official. Nothing is decorative.`
+      }
+    },
+    {
+      id: "s4",
+      title: "Syntax as Feeling",
+      subtitle: "How the shape of a sentence carries emotion",
+      body: `The syntax of a sentence — the order in which its elements arrive — is not neutral. The same information arranged differently creates different feelings in the reader.
+
+"She was afraid" is a statement. "Fear moved through her" is an event. "Something that might have been fear, or might have been excitement, or both, moved through her and would not settle" is a consciousness in process — uncertain, unresolved, unable to land.
+
+The syntax of the third version performs the feeling it describes. This is what literary prose can do that no other form can: make the shape of a sentence be the shape of an experience.
+
+Watch for sentences where you have stated an emotion in the most direct possible form. Ask: could the syntax perform this instead? Could the shape of the sentence be the shape of the feeling?`,
+      principle: "Let the structure of the sentence enact what it describes. Syntax is emotion made grammatical.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `And he kept walking up and down the street by the fence, waiting for the chance. He saw a beggar go in at the gate and dogs fly at him; then an hour later he heard a piano, and the sounds were faint and indistinct. Probably it was Anna Sergeyevna playing. The front door suddenly opened, and an old woman came out, followed by the familiar white Pomeranian. Gurov was on the point of calling to the dog, but his heart began beating violently, and in his excitement he could not remember the dog's name.`,
+        analysis: `The syntax performs the waiting. Short observations accumulate: a beggar, dogs, an hour passing, piano sounds, a door. The sentences are brief and disconnected, like a man who cannot settle his attention. Then the Pomeranian — and the sentence changes register entirely. The loss of the dog's name — this tiny, absurd, devastating detail — is the emotional climax. The syntax of the sentence builds to it without announcing it.`
+      }
+    }
+  ],
+  scene: [
+    {
+      id: "sc1",
+      title: "What Makes a Scene a Scene",
+      subtitle: "The difference between scene and passage",
+      body: `A scene has an engine: a want, an obstacle, and a change in state. Without all three, what you have is a passage — observation, atmosphere, description — which may be beautiful but does not carry story.
+
+Literary fiction needs both scenes and passages. Passages of pure atmosphere, of memory, of lyric observation, do important work: they charge what surrounds them, modulate pace, create the texture of a consciousness. But they cannot substitute for scenes. Scenes carry the story. Passages earn their place by making scenes more resonant.
+
+The test of a scene: by its end, has something changed? Not necessarily something visible. A character's understanding, the power between two people, the reader's knowledge, the emotional weather — any of these constitute change. A scene that ends in the same emotional state it began is a missed opportunity.`,
+      principle: "A scene needs a want, an obstacle, and a change in state. Without change, it is a passage.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `Gurov, who was sitting in the stalls, too, went up to her and said in a trembling voice, with a forced smile: "Good-evening." She glanced at him and turned pale, then glanced again with horror, unable to believe her eyes, and tightly gripped the fan and the lorgnette in her hands, evidently struggling with herself not to faint.`,
+        analysis: `The want: Gurov wants to see her, to reconnect. The obstacle: the theatre, the husband, the public space, her terror. The change: everything. From their affair being a summer memory, it becomes present again — undeniably, disruptively real. The scene is four sentences. It has all three elements. It changes the story.`
+      }
+    },
+    {
+      id: "sc2",
+      title: "Arrival and Orientation",
+      subtitle: "How to begin a scene",
+      body: `Scenes begin at instability. Not before it. One of the most reliable mistakes in apprentice fiction is starting scenes too early — before the pressure has arrived, in the establishing shots, the warming up of the characters.
+
+Begin close to the tension. Trust the reader to orient themselves in the scene's first few beats rather than providing a full orientation before anything happens.
+
+Orientation happens through action and detail, not through explanation. The room, the weather, the social arrangement of bodies — all of this can be established through what characters do and notice, rather than through authorial description. If your scene begins with two paragraphs of setting before a character does anything, you have probably started too early.`,
+      principle: "Begin close to pressure. Establish orientation through action and detail, not prior to it.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `Four men in their shirt-sleeves stood grouped together on the garden path. They carried staves covered with rolls of canvas, and they had big tool-bags slung on their backs. They looked impressive. Laura wished now that she was not holding that piece of bread-and-butter, but there was nowhere to put it, and she couldn't possibly throw it away. She blushed and tried to look severe and even a little bit short-sighted as she came up to them.`,
+        analysis: `We are inside the scene immediately. The workmen are there, the canvas and tool-bags establishing class and purpose. Then Laura — and immediately her discomfort, the absurd bread-and-butter she cannot put down, her attempt at an authority she doesn't feel. All orientation is accomplished through action and embarrassment. We know the scene's pressure (class anxiety, the performance of authority) before it is named, because it is being enacted.`
+      }
+    },
+    {
+      id: "sc3",
+      title: "Pressure in the Scene",
+      subtitle: "How scenes escalate",
+      body: `A scene without escalating pressure is a scene that dies in the middle. The pressure doesn't need to be dramatic — raised voices, revelations, crises. In literary fiction, pressure is often entirely internal: silence that becomes unbearable, politeness that becomes hostile, attraction that becomes visible, shame that deepens.
+
+The writer's job is to ensure that whatever the scene's pressure is, it increases rather than holds steady. A scene that begins tense and ends at the same tension level has not been working hard enough.
+
+Escalation in literary fiction is often achieved through small accumulations: a pause that extends, a word that gets repeated, a question that doesn't get answered, an observation the character cannot quite let go of. The pressure builds through accretion rather than event.`,
+      principle: "Pressure must increase within a scene. Small accumulations work better than manufactured drama.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `But in this case there was still the diffidence, the angularity of inexperienced youth, an awkward feeling; and there was a sense of consternation as though some one had suddenly knocked at the door. The attitude of Anna Sergeyevna — "the lady with the dog" — to what had happened was somehow peculiar, very grave, as though it were her fall — so it seemed, and it was strange and inappropriate. Her face dropped and faded, and on both sides of it her long hair hung down mournfully; she mused in a dejected attitude like "the woman who was a sinner" in an old-fashioned picture. "It's wrong," she said. "You will be the first to despise me now." There was a water-melon on the table.`,
+        analysis: `The pressure in this scene is the widening gap between Anna's experience and Gurov's. Each sentence increases it: her gravity, her sense of fall, her dejected attitude, her self-accusation. The pressure builds through observation — through Gurov watching, and through the reader watching Gurov watch. Then: "There was a water-melon on the table." The sentence breaks the escalation with something so mundane it is shocking. The pressure has reached its peak through contrast.`
+      }
+    },
+    {
+      id: "sc4",
+      title: "The Scene's Ending",
+      subtitle: "Where to stop",
+      body: `Strong scenes end on image, implication, gesture, or silence. They do not end on summary. They do not tell the reader what the scene meant. They trust the reader to carry the meaning forward.
+
+The temptation at the end of a scene is to land the emotion — to write the sentence that names what has happened, that makes the significance explicit. Resist this. The scene has already done the work. The final sentence that names the meaning undoes it.
+
+The best endings in literary fiction stop slightly before the reader expects them to. They end in the middle of the feeling rather than after it. They leave something unfinished — not as a coy withholding, but because emotional experience is never finished, never fully resolved, and prose that pretends otherwise is lying.`,
+      principle: "End on image, gesture, or implication. Stop before you explain what the scene meant.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `It was growing dusky as Laura shut their garden gates. A big dog ran by like a shadow. The road gleamed white, and down below in the hollow the little cottages were in deep shade. How quiet it seemed after the afternoon. Here she was going down the hill to somewhere where a man lay dead, and she couldn't realize it. Why couldn't she? She stopped a minute. And it seemed to her that kisses, voices, tinkling spoons, laughter, the smell of crushed grass were somehow inside her. She had no room for anything else. How strange!`,
+        analysis: `Mansfield ends not with a statement about class or death or Laura's moral inadequacy, but with an image of the party's residue living inside Laura as she walks toward a dead man. "Kisses, voices, tinkling spoons, laughter, the smell of crushed grass" — the party is not behind her. It is in her body. "She had no room for anything else." Not an accusation. Not a judgment. An observation that holds both the terrible and the true. Then "How strange!" — Laura's voice, childlike and insufficient, which is the point.`
+      }
+    }
+  ],
+  story: [
+    {
+      id: "st1",
+      title: "What Makes a Story a Story",
+      subtitle: "Time, pressure, and desire",
+      body: `A story begins when somebody wants something, something threatens that desire, and time begins pressing on the situation. Without all three, prose becomes static.
+
+Without pressure, prose is observation. Without desire, scenes lose movement — characters become recipients of events rather than agents in them. Without time, writing becomes analysis: the pressure that characters actually feel is the pressure of time, the narrowing of options, the approach of the irreversible.
+
+Literary fiction differs from genre fiction in where it locates its drama. Genre fiction dramatises external events. Literary fiction dramatises what happens inside a person under the pressure of external events. The external events are the occasion; the internal events are the story.`,
+      principle: "Story requires time, pressure, and desire. Remove any one of them and you have something else — essay, impression, anecdote.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `It was said that a new person had appeared on the sea-front: a lady with a little dog. Dmitri Dmitritch Gurov, who had by then been a fortnight at Yalta, and so was fairly at home there, had begun to take an interest in new arrivals.`,
+        analysis: `Two sentences. Time: Gurov has been in Yalta a fortnight — he is settled, bored, available. Desire: he has "begun to take an interest in new arrivals." Pressure: it is implicit — the unnamed restlessness of a man who has run out of distractions. Chekhov establishes all three in the opening. The story can begin because all its conditions are in place.`
+      }
+    },
+    {
+      id: "st2",
+      title: "Literary Fiction Is About Loss",
+      subtitle: "The deepest engine",
+      body: `The deepest engine of most literary fiction is loss — or the fear of loss, or the refusal to accept it, or the slow adjustment to it. Stories move because something that was once possible is becoming impossible. Something that was once held is slipping away.
+
+This is not pessimism. It is the structure of time. Every story exists in time, and time takes things away. The question a literary story poses is not usually "Will they get what they want?" but "How will they cope with not getting it — or with getting it and discovering it is not what they wanted?"
+
+The character who cannot accept loss becomes the engine of the middle of a story: their avoidance, their self-deception, their insistence on a version of reality that the evidence is disproving — this is where literary fiction lives.`,
+      principle: "Ask of any story: what is being lost? If you cannot answer, the story may not yet have found its engine.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `And in his home it was impossible to talk of his love, and he had no one outside; he could not talk to his tenants nor to any one at the bank. And what had he to talk of? Had he been in love, then? Had there been anything beautiful, poetical, or edifying or simply interesting in his relations with Anna Sergeyevna? And there was nothing for him but to talk vaguely of love, of woman, and no one guessed what it meant.`,
+        analysis: `What Gurov is losing — has already lost — is the possibility of being known. His love for Anna is real; his life gives him nowhere to put it. He cannot speak it to his wife, his colleagues, his friends. The loss is not of Anna herself but of the version of himself that she makes possible. The paragraph enacts the loss through negatives — cannot, no one, nothing.`
+      }
+    },
+    {
+      id: "st3",
+      title: "The Middle Must Be Fat",
+      subtitle: "Where stories fail",
+      body: `Most weak literary fiction fails in the middle. The opening is strong — the character is established, the tension implied, the world evoked. The ending is strong — a moment of recognition, an image that resonates. But the middle is thin. Things happen without escalating pressure. Scenes accumulate without deepening the situation.
+
+The middle must be fat. Feed it loss, shame, misunderstanding, avoidance, failed communication, the wrong choice made for the right reason, the right choice made too late. Do not rescue characters from difficulty. Do not resolve pressure before it has built to its natural breaking point.
+
+The writer's instinct to help their characters, to ease their pain, to move them toward resolution before the story has earned it — this is the most common cause of thin middles.`,
+      principle: "The middle is where the story earns its ending. Do not rescue characters early. Let pressure accumulate until it breaks.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `One evening, coming out of the doctors' club with an official with whom he had been playing cards, he could not resist saying: "If only you knew what a fascinating woman I made the acquaintance of in Yalta!" The official got into his sledge and was driving away, but turned suddenly and shouted: "Dmitri Dmitritch!" "What?" "You were right this evening: the sturgeon was a bit too strong!"`,
+        analysis: `Gurov tries to speak his love — the one true thing in his life — and is answered with a comment about fish. The middle of the story is built from these collisions: the interior enormity of Gurov's feeling against the complete indifference of the world he inhabits. This is pressure accumulated through repetition of failure. Each attempt to speak is met with incomprehension. The middle is fat because Chekhov is merciless about how long this isolation lasts.`
+      }
+    },
+    {
+      id: "st4",
+      title: "The Ending That Doesn't End",
+      subtitle: "Openness as form",
+      body: `The great literary story endings are not conclusions. They do not resolve. They arrive at a point of clarity that is also a point of irresolution — the character understands something fully for the first time, and what they understand is that they are trapped, or changed, or unable to return.
+
+Chekhov's endings refuse closure. The Lady with the Dog ends not with Gurov and Anna together but with them sitting in a hotel room, understanding that "the most complicated and difficult part was only just beginning." The story ends by opening. The ending is the recognition of the problem, not its solution.
+
+This is not a refusal of meaning. It is a different model of meaning — one that says: life does not resolve into neat conclusions, and fiction that pretends it does is being dishonest about what life is.`,
+      principle: "An ending that resolves everything has often resolved too much. The strongest endings open as much as they close.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `And it seemed to them that in a little while the solution would be found, and then a new and splendid life would begin; and it was clear to both of them that they had still a long, long road before them, and that the most complicated and difficult part was only just beginning.`,
+        analysis: `This is one of the great endings in short fiction. It gives the reader exactly what has been withheld — the recognition of love, the acknowledgement of its reality — and simultaneously refuses to resolve it. "The most complicated and difficult part was only just beginning." The story ends by naming what it cannot show us: the whole of their lives. The ellipsis is the form. The opening is the meaning.`
+      }
+    }
+  ]
+};
+
+// ─── STEP-BY-STEP PARAGRAPH EXERCISE ─────────────────────────────────────────
+
+const PARA_STEPS = [
+  {
+    id: "step1",
+    title: "Find the Movement",
+    instruction: "Write the opening sentence of your paragraph and the closing sentence. Where does it begin? Where does it need to arrive? Don't fill in the middle yet. Just establish the two poles.",
+    prompt: "Write your opening sentence and your closing sentence. Nothing in between.",
+    hint: "The opening makes a promise. The closing fulfils or complicates it. If both sentences say the same thing, you haven't found the movement yet."
+  },
+  {
+    id: "step2",
+    title: "Add the Particulars",
+    instruction: "Now fill in the middle — but only with concrete, specific details. No emotions named. No abstract observations. Only what can be seen, heard, touched, or physically registered. Objects, gestures, sounds, the arrangement of bodies in a room.",
+    prompt: "Write the full paragraph now. Concrete details only in the middle. No named feelings.",
+    hint: "If you find yourself writing 'she felt' or 'he realised' — stop. Find the physical equivalent. What does she do? What does he notice? What is in the room?"
+  },
+  {
+    id: "step3",
+    title: "Read It Aloud — Rhythm",
+    instruction: "Read the paragraph aloud. Mark any place where you ran out of breath, where it felt mechanical, where it sped up when it should have slowed. Now vary two sentences: make one longer and one shorter.",
+    prompt: "Rewrite the paragraph with at least one deliberately long sentence and one deliberately short one.",
+    hint: "Short sentences create weight and finality. Long sentences create immersion. Where does your paragraph need to accelerate? Where does it need to land?"
+  },
+  {
+    id: "step4",
+    title: "Cut What Explains",
+    instruction: "Read through and find anything that names an emotion directly, or explains what a detail means, or summarises what the paragraph has already shown. Cut it. If cutting it makes the paragraph feel incomplete, add a detail — not an explanation.",
+    prompt: "Paste the revised paragraph with all explanation removed.",
+    hint: "The reader should feel the emotion without being told what it is. If you've cut too much and the paragraph feels empty, you need more concrete detail — not more explanation."
+  },
+  {
+    id: "step5",
+    title: "The Final Check",
+    instruction: "Read the paragraph one more time. Ask three questions: (1) Does it arrive somewhere different from where it began? (2) Is the emotion implied rather than stated? (3) Could any sentence be cut without losing something real? If yes, yes, no — the paragraph is working.",
+    prompt: "Write your final version. Then note: what did you learn from this paragraph that you will carry into the next one?",
+    hint: "Good paragraphs teach you something about your own prose. What habit were you most tempted to fall back on? What did you resist?"
+  }
+];
+
+// ─── CONSTANTS ───────────────────────────────────────────────────────────────
 
 const THEORY_CARDS = [
   { id: "t1", category: "Act Structure", front: "What does Act 1 establish in literary fiction?", back: "The character's ordinary emotional world, the central lack/desire, the governing tension, the emotional atmosphere, and what will eventually have to change. The protagonist usually has avoidance patterns, contradictions, and blind spots." },
@@ -46,8 +379,6 @@ const GROQ_MODELS = [
 
 const FOCUS_OPTIONS = ["random", "rhythm", "subtext", "interiority", "detail", "based on history"];
 
-// ─── PROMPTS ─────────────────────────────────────────────────────────────────
-
 const GENERATE_EXERCISE_SYSTEM = `You are a literary fiction writing teacher in the tradition of Chekhov and Carver. Generate a single paragraph-level writing exercise.
 
 Respond ONLY with a JSON object, no markdown, no preamble:
@@ -59,9 +390,9 @@ Respond ONLY with a JSON object, no markdown, no preamble:
   "criteria": ["3-4 short evaluation criteria as questions"]
 }
 
-The exercise must target paragraph structure — how paragraphs move, breathe, and build. Avoid vague prompts. Make the constraint specific and craft-focused.`;
+The exercise must target paragraph structure. Make the constraint specific and craft-focused.`;
 
-const FEEDBACK_SYSTEM = `You are a literary fiction editor. Your feedback is objective, precise, and unsentimental. You do not encourage mediocrity.
+const FEEDBACK_SYSTEM = `You are a literary fiction editor. Your feedback is objective, precise, and unsentimental.
 
 Score the submission out of 100 with a breakdown across four dimensions (25 points each):
 - IMPLICATION (25): emotion shown vs stated; subtext vs explanation
@@ -72,23 +403,16 @@ Score the submission out of 100 with a breakdown across four dimensions (25 poin
 Respond ONLY with a JSON object, no markdown:
 {
   "total": <number 0-100>,
-  "scores": {
-    "implication": <0-25>,
-    "movement": <0-25>,
-    "detail": <0-25>,
-    "rhythm": <0-25>
-  },
+  "scores": { "implication": <0-25>, "movement": <0-25>, "detail": <0-25>, "rhythm": <0-25> },
   "working": "1-2 specific things that work, quoted from the text",
   "central_issue": "one core craft problem, named precisely",
   "rewrite": "rewrite the weakest sentence to demonstrate the fix",
   "question": "one diagnostic question for the writer"
 }
 
-Be direct. Quote from the text. Do not soften criticism with compliments. Total under 300 words across all fields.`;
+Be direct. Quote from the text. Total under 300 words across all fields.`;
 
 const SCENE_ANALYSIS_SYSTEM = `You are a literary fiction editor specialising in paragraph and scene structure.
-
-The writer has submitted a passage. Break it into its natural paragraphs and analyse each one, then give an overall scene assessment.
 
 Respond ONLY with a JSON object, no markdown:
 {
@@ -104,12 +428,7 @@ Respond ONLY with a JSON object, no markdown:
   ],
   "scene": {
     "total": <0-100>,
-    "scores": {
-      "implication": <0-25>,
-      "movement": <0-25>,
-      "detail": <0-25>,
-      "rhythm": <0-25>
-    },
+    "scores": { "implication": <0-25>, "movement": <0-25>, "detail": <0-25>, "rhythm": <0-25> },
     "engine": "what is driving this scene (want/obstacle/change)?",
     "what_changes": "what has shifted by the end, or 'nothing — this is a passage not a scene'",
     "central_issue": "the single most important structural problem",
@@ -117,14 +436,7 @@ Respond ONLY with a JSON object, no markdown:
   }
 }`;
 
-const ANALYSIS_SYSTEM = `You are a literary fiction editor. Analyse the submitted prose for:
-
-RHYTHM: Sentence length variation, cadence, where it breathes and where it rushes.
-IMPLICATION: What is shown vs stated. Flag any emotion named rather than enacted.
-DETAIL: Specificity and necessity of each detail. Does it do more than one job?
-MOVEMENT: Where does the passage begin vs end? Does it arrive somewhere?
-
-Score out of 100 with the same breakdown (25 pts each: implication, movement, detail, rhythm).
+const ANALYSIS_SYSTEM = `You are a literary fiction editor. Score out of 100 (25 pts each: implication, movement, detail, rhythm).
 
 Respond ONLY with JSON, no markdown:
 {
@@ -136,6 +448,16 @@ Respond ONLY with JSON, no markdown:
   "movement": "analysis"
 }`;
 
+const STEP_FEEDBACK_SYSTEM = `You are a literary fiction editor giving feedback on a single step in a paragraph-building exercise. Be specific, brief, and focused only on the step's goal. Quote from their text. Under 150 words.
+
+Respond ONLY with JSON:
+{
+  "score": <0-10>,
+  "working": "what is working in relation to this step's goal",
+  "issue": "the one thing to fix or notice",
+  "next": "one concrete suggestion to carry into the next step"
+}`;
+
 // ─── API ──────────────────────────────────────────────────────────────────────
 
 async function callGroq(apiKey, model, systemPrompt, userMessage) {
@@ -143,37 +465,23 @@ async function callGroq(apiKey, model, systemPrompt, userMessage) {
     method: "POST",
     headers: { "Content-Type": "application/json", "Authorization": `Bearer ${apiKey}` },
     body: JSON.stringify({
-      model,
-      max_tokens: 1200,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
-      ],
+      model, max_tokens: 1200,
+      messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userMessage }],
     }),
   });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err?.error?.message || `Groq error ${res.status}`);
-  }
-  const data = await res.json();
-  const raw = data.choices?.[0]?.message?.content || "";
-  return raw;
+  if (!res.ok) { const err = await res.json().catch(() => ({})); throw new Error(err?.error?.message || `Groq error ${res.status}`); }
+  return (await res.json()).choices?.[0]?.message?.content || "";
 }
 
-function parseJSON(raw) {
-  const clean = raw.replace(/```json|```/g, "").trim();
-  return JSON.parse(clean);
-}
+function parseJSON(raw) { return JSON.parse(raw.replace(/```json|```/g, "").trim()); }
 
 // ─── UI HELPERS ───────────────────────────────────────────────────────────────
 
 const btn = (active) => ({
   background: active ? "rgba(212,183,120,0.12)" : "none",
   border: `1px solid ${active ? "rgba(212,183,120,0.3)" : "transparent"}`,
-  color: active ? G : DIM,
-  padding: "6px 16px", borderRadius: 2, cursor: "pointer",
-  fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2,
-  textTransform: "uppercase", transition: "all 0.2s",
+  color: active ? G : DIM, padding: "6px 16px", borderRadius: 2, cursor: "pointer",
+  fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", transition: "all 0.2s",
 });
 
 function ScoreBar({ label, score, max = 25 }) {
@@ -210,17 +518,206 @@ function FeedbackBlock({ data }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <ScoreCard scores={data.scores} total={data.total} />
-      {[
-        ["What's Working", data.working],
-        ["Central Issue", data.central_issue],
-        ["Rewrite", data.rewrite],
-        ["Question to Sit With", data.question],
-      ].map(([label, content]) => content && (
+      {[["What's Working", data.working], ["Central Issue", data.central_issue], ["Rewrite", data.rewrite], ["Question to Sit With", data.question]].map(([label, content]) => content && (
         <div key={label} style={{ borderLeft: `2px solid ${label === "Central Issue" ? "#f87171" : label === "What's Working" ? "#4ade80" : G}`, paddingLeft: 16 }}>
           <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase", marginBottom: 6 }}>{label}</div>
           <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.8, color: "#b0a898" }}>{content}</div>
         </div>
       ))}
+    </div>
+  );
+}
+
+// ─── LESSON READER ────────────────────────────────────────────────────────────
+
+const LESSON_TRACKS = [
+  { id: "paragraph", label: "Paragraph", icon: "¶" },
+  { id: "sentence", label: "Sentence", icon: "—" },
+  { id: "scene", label: "Scene", icon: "◎" },
+  { id: "story", label: "Story", icon: "∞" },
+];
+
+function LessonReader({ onXp }) {
+  const [track, setTrack] = useState("paragraph");
+  const [lessonIdx, setLessonIdx] = useState(0);
+  const [showExample, setShowExample] = useState(false);
+
+  const lessons = LESSONS[track];
+  const lesson = lessons[lessonIdx];
+
+  const handleTrack = (t) => { setTrack(t); setLessonIdx(0); setShowExample(false); };
+  const handleNext = () => { if (lessonIdx < lessons.length - 1) { setLessonIdx(i => i + 1); setShowExample(false); onXp(8, null); } };
+  const handlePrev = () => { if (lessonIdx > 0) { setLessonIdx(i => i - 1); setShowExample(false); } };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      <div style={{ display: "flex", gap: 2, borderBottom: `1px solid ${BORDER}` }}>
+        {LESSON_TRACKS.map(t => (
+          <button key={t.id} onClick={() => handleTrack(t.id)}
+            style={{ background: "none", border: "none", borderBottom: `2px solid ${track === t.id ? G : "transparent"}`, color: track === t.id ? G : DIM, padding: "8px 14px", cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", marginBottom: -1, display: "flex", gap: 6, alignItems: "center" }}>
+            <span style={{ opacity: 0.6 }}>{t.icon}</span> {t.label}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+        {lessons.map((_, i) => (
+          <div key={i} onClick={() => { setLessonIdx(i); setShowExample(false); }}
+            style={{ width: i === lessonIdx ? 20 : 6, height: 6, borderRadius: 3, background: i === lessonIdx ? G : i < lessonIdx ? "#3a3020" : "#1a1810", cursor: "pointer", transition: "all 0.3s" }} />
+        ))}
+        <span style={{ marginLeft: 8, fontSize: 10, color: "#4a4438", letterSpacing: 1 }}>{lessonIdx + 1} / {lessons.length}</span>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        <div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 6 }}>{LESSON_TRACKS.find(t => t.id === track)?.label} · Lesson {lessonIdx + 1}</div>
+          <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8", lineHeight: 1.3, marginBottom: 4 }}>{lesson.title}</div>
+          <div style={{ fontSize: 13, color: DIM }}>{lesson.subtitle}</div>
+        </div>
+
+        <div style={{ fontSize: 15, fontFamily: "'Lora', serif", lineHeight: 1.85, color: MID, whiteSpace: "pre-line" }}>{lesson.body}</div>
+
+        <div style={{ background: "rgba(212,183,120,0.06)", border: `1px solid rgba(212,183,120,0.2)`, borderLeft: `3px solid ${G}`, borderRadius: "0 3px 3px 0", padding: "16px 20px" }}>
+          <div style={{ fontSize: 9, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 8 }}>Core Principle</div>
+          <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: "#e0d4b0", fontStyle: "italic" }}>{lesson.principle}</div>
+        </div>
+
+        <div>
+          <button onClick={() => setShowExample(e => !e)}
+            style={{ background: showExample ? "rgba(212,183,120,0.08)" : "none", border: `1px solid ${showExample ? "rgba(212,183,120,0.25)" : BORDER}`, color: showExample ? G : DIM, padding: "10px 20px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", width: "100%", textAlign: "left" }}>
+            {showExample ? "▲ Hide Example" : `▼ See It In Practice — ${lesson.example.source}`}
+          </button>
+          {showExample && (
+            <div style={{ borderLeft: `2px solid ${BORDER}`, marginTop: 12, paddingLeft: 20, display: "flex", flexDirection: "column", gap: 16 }}>
+              <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase" }}>{lesson.example.source}</div>
+              <div style={{ fontFamily: "'Lora', serif", fontSize: 15, lineHeight: 1.9, color: "#c8c0a8", fontStyle: "italic", background: "rgba(0,0,0,0.25)", padding: "18px 20px", borderRadius: 3 }}>{lesson.example.text}</div>
+              <div style={{ borderLeft: `2px solid rgba(212,183,120,0.3)`, paddingLeft: 16 }}>
+                <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Analysis</div>
+                <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.8, color: "#9a9080" }}>{lesson.example.analysis}</div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 8, borderTop: `1px solid ${BORDER}` }}>
+        <button onClick={handlePrev} disabled={lessonIdx === 0}
+          style={{ background: "none", border: `1px solid ${lessonIdx === 0 ? "transparent" : BORDER}`, color: lessonIdx === 0 ? "#2a2520" : DIM, padding: "8px 20px", borderRadius: 2, cursor: lessonIdx === 0 ? "not-allowed" : "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+          ← Prev
+        </button>
+        <button onClick={handleNext} disabled={lessonIdx === lessons.length - 1}
+          style={{ background: lessonIdx < lessons.length - 1 ? "#3a2e18" : "none", border: `1px solid ${lessonIdx < lessons.length - 1 ? "rgba(212,183,120,0.3)" : "transparent"}`, color: lessonIdx < lessons.length - 1 ? G : "#2a2520", padding: "8px 20px", borderRadius: 2, cursor: lessonIdx < lessons.length - 1 ? "pointer" : "not-allowed", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+          Next →
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── STEP PARAGRAPH EXERCISE ──────────────────────────────────────────────────
+
+function StepParaExercise({ apiKey, model, onXp }) {
+  const [stepIdx, setStepIdx] = useState(0);
+  const [drafts, setDrafts] = useState({});
+  const [feedbacks, setFeedbacks] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const step = PARA_STEPS[stepIdx];
+  const draft = drafts[step.id] || "";
+  const feedback = feedbacks[step.id];
+  const setDraft = (val) => setDrafts(d => ({ ...d, [step.id]: val }));
+
+  const getFeedback = async () => {
+    if (!draft.trim() || draft.trim().length < 10) return;
+    if (!apiKey) { setError("Add your Groq API key in Settings first."); return; }
+    setLoading(true); setError(null);
+    try {
+      const raw = await callGroq(apiKey, model, STEP_FEEDBACK_SYSTEM, `Step: "${step.title}"\nGoal: ${step.instruction}\n\nSubmission:\n\n${draft}`);
+      const data = parseJSON(raw);
+      setFeedbacks(f => ({ ...f, [step.id]: data }));
+      onXp(data.score ? data.score * 2 : 10, null);
+    } catch (e) { setError(e.message || "Feedback failed."); }
+    setLoading(false);
+  };
+
+  const wc = draft.trim().split(/\s+/).filter(Boolean).length;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>
+        Build a paragraph one element at a time. Work through all five steps with the same paragraph — each step focuses on a single craft principle.
+      </div>
+
+      <div style={{ display: "flex", gap: 0 }}>
+        {PARA_STEPS.map((s, i) => (
+          <div key={s.id} onClick={() => setStepIdx(i)}
+            style={{ flex: 1, padding: "8px 0", textAlign: "center", cursor: "pointer", borderBottom: `2px solid ${i === stepIdx ? G : feedbacks[s.id] ? "#3a3020" : "#1a1810"}`, transition: "border-color 0.2s" }}>
+            <div style={{ fontSize: 10, color: i === stepIdx ? G : feedbacks[s.id] ? "#6a5a30" : "#2a2520", letterSpacing: 1 }}>{i + 1}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ background: "rgba(0,0,0,0.3)", border: `1px solid ${BORDER}`, borderRadius: 3, padding: "20px" }}>
+        <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 8 }}>Step {stepIdx + 1} of {PARA_STEPS.length}</div>
+        <div style={{ fontFamily: "'Lora', serif", fontSize: 18, color: "#e0d8c8", marginBottom: 12 }}>{step.title}</div>
+        <div style={{ fontSize: 14, color: MID, lineHeight: 1.75, marginBottom: 16 }}>{step.instruction}</div>
+        <div style={{ background: "rgba(212,183,120,0.05)", border: "1px solid rgba(212,183,120,0.15)", borderRadius: 3, padding: "12px 16px", fontSize: 12, color: "#7a6a48", fontStyle: "italic", lineHeight: 1.6 }}>{step.hint}</div>
+      </div>
+
+      {stepIdx > 0 && drafts[PARA_STEPS[stepIdx - 1].id] && (
+        <div style={{ borderLeft: `2px solid #2a2520`, paddingLeft: 16 }}>
+          <div style={{ fontSize: 10, letterSpacing: 2, color: "#3a3028", textTransform: "uppercase", marginBottom: 6 }}>Your previous draft</div>
+          <div style={{ fontFamily: "'Lora', serif", fontSize: 13, color: "#4a4438", lineHeight: 1.7, fontStyle: "italic" }}>{drafts[PARA_STEPS[stepIdx - 1].id]}</div>
+        </div>
+      )}
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase" }}>{step.prompt}</div>
+        <textarea value={draft} onChange={e => setDraft(e.target.value)} rows={6}
+          style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${BORDER}`, borderRadius: 3, color: "#e0d8cc", fontFamily: "'Lora', serif", fontSize: 16, lineHeight: 1.8, padding: "16px", resize: "vertical", outline: "none", width: "100%", boxSizing: "border-box" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
+          <button onClick={getFeedback} disabled={loading || draft.trim().length < 10}
+            style={{ background: loading ? "#2a2520" : "#3a2e18", color: loading ? "#4a4438" : G, border: `1px solid rgba(212,183,120,${loading ? 0.1 : 0.3})`, padding: "10px 24px", borderRadius: 2, cursor: loading ? "not-allowed" : "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>
+            {loading ? "Reading…" : "Get Feedback"}
+          </button>
+          {feedback && stepIdx < PARA_STEPS.length - 1 && (
+            <button onClick={() => setStepIdx(i => i + 1)}
+              style={{ background: "rgba(212,183,120,0.08)", color: G, border: `1px solid rgba(212,183,120,0.2)`, padding: "10px 20px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+              Next Step →
+            </button>
+          )}
+          <span style={{ marginLeft: "auto", fontSize: 11, color: "#4a4438" }}>{wc} words</span>
+        </div>
+      </div>
+
+      {error && <div style={{ background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.2)", borderRadius: 3, padding: "14px 18px", fontSize: 13, color: "#f87171" }}>{error}</div>}
+
+      {feedback && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ fontFamily: "'Lora', serif", fontSize: 28, color: feedback.score >= 8 ? "#4ade80" : feedback.score >= 5 ? G : "#f87171" }}>{feedback.score}</div>
+            <div style={{ fontSize: 11, color: DIM }}>/10 for this step</div>
+          </div>
+          {[["Working", feedback.working, "#4ade80"], ["Issue", feedback.issue, "#f87171"], ["Carry forward", feedback.next, G]].map(([label, content, color]) => content && (
+            <div key={label} style={{ borderLeft: `2px solid ${color}`, paddingLeft: 16 }}>
+              <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase", marginBottom: 4 }}>{label}</div>
+              <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: "#b0a898" }}>{content}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {stepIdx === PARA_STEPS.length - 1 && feedback && (
+        <div style={{ background: "rgba(212,183,120,0.06)", border: `1px solid rgba(212,183,120,0.2)`, borderRadius: 3, padding: "20px", textAlign: "center" }}>
+          <div style={{ fontFamily: "'Lora', serif", fontSize: 16, color: G, marginBottom: 8 }}>Paragraph complete.</div>
+          <div style={{ fontSize: 13, color: DIM, lineHeight: 1.7 }}>You've worked through all five elements. Start again with a new paragraph.</div>
+          <button onClick={() => { setStepIdx(0); setDrafts({}); setFeedbacks({}); }}
+            style={{ marginTop: 16, background: "none", border: `1px solid ${BORDER}`, color: DIM, padding: "8px 20px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+            Start New Paragraph
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -234,9 +731,7 @@ function Settings({ apiKey, setApiKey, model, setModel, onDone }) {
       <div>
         <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Setup</div>
         <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8", marginBottom: 12 }}>Connect Groq</div>
-        <div style={{ fontSize: 14, color: DIM, lineHeight: 1.75 }}>
-          Free API key at <a href="https://console.groq.com" style={{ color: G }}>console.groq.com</a> — no credit card needed.
-        </div>
+        <div style={{ fontSize: 14, color: DIM, lineHeight: 1.75 }}>Free API key at <a href="https://console.groq.com" style={{ color: G }}>console.groq.com</a> — no credit card needed.</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <label style={{ fontSize: 11, letterSpacing: 2, color: DIM, textTransform: "uppercase" }}>Groq API Key</label>
@@ -257,8 +752,6 @@ function Settings({ apiKey, setApiKey, model, setModel, onDone }) {
     </div>
   );
 }
-
-// ─── FLASHCARD ────────────────────────────────────────────────────────────────
 
 function FlashCard({ card, onResult, onSkip }) {
   const [flipped, setFlipped] = useState(false);
@@ -283,8 +776,6 @@ function FlashCard({ card, onResult, onSkip }) {
   );
 }
 
-// ─── EXERCISE ─────────────────────────────────────────────────────────────────
-
 function Exercise({ prompt, apiKey, model, onXp, history, onAddToScene }) {
   const [text, setText] = useState("");
   const [feedback, setFeedback] = useState(null);
@@ -296,17 +787,12 @@ function Exercise({ prompt, apiKey, model, onXp, history, onAddToScene }) {
     if (!apiKey) { setError("Add your Groq API key in Settings first."); return; }
     setLoading(true); setError(null); setFeedback(null);
     try {
-      const historyCtx = history.length > 0
-        ? `\n\nWriter's recent struggle areas from previous exercises: ${history.slice(-3).map(h => h.central_issue).filter(Boolean).join("; ")}`
-        : "";
-      const userMsg = `Exercise: "${prompt.title}"\nInstruction: ${prompt.instruction}\nCriteria: ${prompt.criteria.join("; ")}${historyCtx}\n\nSubmission:\n\n${text}`;
-      const raw = await callGroq(apiKey, model, FEEDBACK_SYSTEM, userMsg);
+      const historyCtx = history.length > 0 ? `\n\nWriter's recent struggle areas: ${history.slice(-3).map(h => h.central_issue).filter(Boolean).join("; ")}` : "";
+      const raw = await callGroq(apiKey, model, FEEDBACK_SYSTEM, `Exercise: "${prompt.title}"\nInstruction: ${prompt.instruction}\nCriteria: ${prompt.criteria.join("; ")}${historyCtx}\n\nSubmission:\n\n${text}`);
       const data = parseJSON(raw);
       setFeedback(data);
       onXp(data.total ? Math.round(data.total / 2) : 10, data);
-    } catch (e) {
-      setError(e.message || "Something went wrong. Check your API key.");
-    }
+    } catch (e) { setError(e.message || "Something went wrong."); }
     setLoading(false);
   };
 
@@ -347,8 +833,6 @@ function Exercise({ prompt, apiKey, model, onXp, history, onAddToScene }) {
   );
 }
 
-// ─── GENERATE EXERCISE ────────────────────────────────────────────────────────
-
 function GenerateExercise({ apiKey, model, history, onXp, onAddToScene }) {
   const [focus, setFocus] = useState("random");
   const [generated, setGenerated] = useState(null);
@@ -360,16 +844,12 @@ function GenerateExercise({ apiKey, model, history, onXp, onAddToScene }) {
     setLoading(true); setError(null); setGenerated(null);
     try {
       const historyCtx = history.length > 0 && focus === "based on history"
-        ? `The writer has struggled with: ${history.slice(-5).map(h => h.central_issue).filter(Boolean).join("; ")}. Generate an exercise that targets their weakest area.`
-        : focus === "random"
-        ? "Choose any focus — rhythm, subtext, interiority, or detail."
-        : `Focus specifically on: ${focus}.`;
+        ? `The writer has struggled with: ${history.slice(-5).map(h => h.central_issue).filter(Boolean).join("; ")}. Target their weakest area.`
+        : focus === "random" ? "Choose any focus — rhythm, subtext, interiority, or detail." : `Focus specifically on: ${focus}.`;
       const raw = await callGroq(apiKey, model, GENERATE_EXERCISE_SYSTEM, historyCtx);
       const data = parseJSON(raw);
       setGenerated({ ...data, id: `gen-${Date.now()}` });
-    } catch (e) {
-      setError(e.message || "Generation failed. Check your API key.");
-    }
+    } catch (e) { setError(e.message || "Generation failed."); }
     setLoading(false);
   };
 
@@ -400,8 +880,6 @@ function GenerateExercise({ apiKey, model, history, onXp, onAddToScene }) {
   );
 }
 
-// ─── SCENE BUILDER ────────────────────────────────────────────────────────────
-
 function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
   const [text, setText] = useState(sceneBuffer || "");
   const [analysis, setAnalysis] = useState(null);
@@ -417,9 +895,7 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
       const data = parseJSON(raw);
       setAnalysis(data);
       onXp(data.scene?.total ? Math.round(data.scene.total / 2) : 10, data.scene);
-    } catch (e) {
-      setError(e.message || "Analysis failed.");
-    }
+    } catch (e) { setError(e.message || "Analysis failed."); }
     setLoading(false);
   };
 
@@ -427,10 +903,7 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>
-        Write or paste your scene freely. The AI will break it into paragraphs, analyse each one's structural function, and score the scene as a whole.
-        {sceneBuffer && <span style={{ color: G }}> Paragraphs from exercises have been added below.</span>}
-      </div>
+      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>Write or paste your scene. The AI breaks it into paragraphs, analyses each one's structural function, and scores the whole.{sceneBuffer && <span style={{ color: G }}> Exercise paragraphs have been added.</span>}</div>
       <textarea value={text} onChange={e => { setText(e.target.value); setSceneBuffer(e.target.value); }} placeholder="Write or paste your scene here…" rows={12}
         style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${BORDER}`, borderRadius: 3, color: "#e0d8cc", fontFamily: "'Lora', serif", fontSize: 16, lineHeight: 1.85, padding: "16px", resize: "vertical", outline: "none", width: "100%", boxSizing: "border-box" }} />
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -438,10 +911,7 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
           style={{ background: loading ? "#2a2520" : "#3a2e18", color: loading ? "#4a4438" : G, border: `1px solid rgba(212,183,120,${loading ? 0.1 : 0.3})`, padding: "10px 24px", borderRadius: 2, cursor: loading ? "not-allowed" : "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>
           {loading ? "Analysing…" : "Analyse Scene"}
         </button>
-        {text && <button onClick={() => { setText(""); setSceneBuffer(""); setAnalysis(null); }}
-          style={{ background: "none", border: `1px solid #2a2520`, color: DIM, padding: "10px 16px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
-          Clear
-        </button>}
+        {text && <button onClick={() => { setText(""); setSceneBuffer(""); setAnalysis(null); }} style={{ background: "none", border: `1px solid #2a2520`, color: DIM, padding: "10px 16px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>Clear</button>}
         <span style={{ marginLeft: "auto", fontSize: 11, color: "#4a4438" }}>{wc} words</span>
       </div>
       {error && <div style={{ background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.2)", borderRadius: 3, padding: "14px 18px", fontSize: 13, color: "#f87171" }}>{error}</div>}
@@ -469,12 +939,7 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
           <div>
             <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 16 }}>Scene Assessment</div>
             <ScoreCard scores={analysis.scene.scores} total={analysis.scene.total} />
-            {[
-              ["Engine", analysis.scene.engine],
-              ["What Changes", analysis.scene.what_changes],
-              ["Central Issue", analysis.scene.central_issue],
-              ["Next Paragraph Should…", analysis.scene.next_paragraph],
-            ].map(([label, content]) => content && (
+            {[["Engine", analysis.scene.engine], ["What Changes", analysis.scene.what_changes], ["Central Issue", analysis.scene.central_issue], ["Next Paragraph Should…", analysis.scene.next_paragraph]].map(([label, content]) => content && (
               <div key={label} style={{ borderLeft: `2px solid ${label === "Central Issue" ? "#f87171" : G}`, paddingLeft: 16, marginBottom: 14 }}>
                 <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase", marginBottom: 6 }}>{label}</div>
                 <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.8, color: "#b0a898" }}>{content}</div>
@@ -486,8 +951,6 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
     </div>
   );
 }
-
-// ─── ANALYSIS ─────────────────────────────────────────────────────────────────
 
 function Analysis({ apiKey, model, onXp }) {
   const [text, setText] = useState("");
@@ -504,9 +967,7 @@ function Analysis({ apiKey, model, onXp }) {
       const data = parseJSON(raw);
       setResult(data);
       onXp(data.total ? Math.round(data.total / 2) : 10, null);
-    } catch (e) {
-      setError(e.message || "Analysis failed.");
-    }
+    } catch (e) { setError(e.message || "Analysis failed."); }
     setLoading(false);
   };
 
@@ -556,21 +1017,12 @@ export default function App() {
 
   const saveKey = (k) => { setApiKey(k); try { localStorage.setItem("groq_key", k); } catch {} };
   const saveModel = (m) => { setModel(m); try { localStorage.setItem("groq_model", m); } catch {} };
-
   const addXp = (n, feedbackData) => {
-    const nx = xp + n;
-    setXp(nx);
+    const nx = xp + n; setXp(nx);
     try { localStorage.setItem("lf_xp", String(nx)); } catch {}
-    if (feedbackData?.central_issue) {
-      setHistory(h => [...h.slice(-9), feedbackData]);
-    }
+    if (feedbackData?.central_issue) setHistory(h => [...h.slice(-9), feedbackData]);
   };
-
-  const addToScene = (text) => {
-    setSceneBuffer(prev => prev ? prev + "\n\n" + text : text);
-    setMode("scene");
-  };
-
+  const addToScene = (text) => { setSceneBuffer(prev => prev ? prev + "\n\n" + text : text); setMode("scene"); };
   const handleCard = (result) => {
     if (result === "Got it ✓") { setCardStats(s => ({ got: s.got + 1 })); addXp(15, null); }
     if (result === "Almost") addXp(5, null);
@@ -582,8 +1034,9 @@ export default function App() {
 
   const nav = [
     { id: "home", label: "Home" },
-    { id: "theory", label: "Theory" },
-    { id: "exercises", label: "Exercises" },
+    { id: "lessons", label: "Lessons" },
+    { id: "theory", label: "Cards" },
+    { id: "exercises", label: "Write" },
     { id: "scene", label: "Scene" },
     { id: "analysis", label: "Analyse" },
     { id: "settings", label: "⚙" },
@@ -601,11 +1054,9 @@ export default function App() {
         textarea { -webkit-appearance: none; font-size: 16px !important; }
         input { -webkit-appearance: none; font-size: 16px !important; }
         ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: #0e0c0a; } ::-webkit-scrollbar-thumb { background: #2a2520; }
-        details summary { list-style: none; } details summary::-webkit-details-marker { display: none; }
         select option { background: #1a1510; }
       `}</style>
 
-      {/* Header */}
       <div style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
         <div>
           <div style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 9, letterSpacing: 5, color: "#5a5040", textTransform: "uppercase" }}>The Workshop</div>
@@ -622,9 +1073,7 @@ export default function App() {
             </div>
           </div>
           <nav style={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-            {nav.map(n => (
-              <button key={n.id} onClick={() => setMode(n.id)} style={btn(mode === n.id)}>{n.label}</button>
-            ))}
+            {nav.map(n => <button key={n.id} onClick={() => setMode(n.id)} style={btn(mode === n.id)}>{n.label}</button>)}
           </nav>
         </div>
       </div>
@@ -638,23 +1087,22 @@ export default function App() {
 
       <div style={{ maxWidth: 700, margin: "0 auto", padding: "36px 20px", animation: "fadeIn 0.4s ease" }}>
 
-        {mode === "settings" && (
-          <Settings apiKey={apiKey} setApiKey={saveKey} model={model} setModel={saveModel} onDone={() => setMode("home")} />
-        )}
+        {mode === "settings" && <Settings apiKey={apiKey} setApiKey={saveKey} model={model} setModel={saveModel} onDone={() => setMode("home")} />}
 
         {mode === "home" && (
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
             <div>
               <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 14 }}>Daily Practice</div>
               <div style={{ fontFamily: "'Lora', serif", fontSize: 24, color: "#e8dfc8", lineHeight: 1.4, marginBottom: 10 }}>Write every day.<br />See every sentence.</div>
-              <div style={{ fontSize: 14, color: "#6a6050", lineHeight: 1.75 }}>Paragraph structure exercises, AI-scored feedback, and a scene builder that chains your work into a whole.</div>
+              <div style={{ fontSize: 14, color: "#6a6050", lineHeight: 1.75 }}>Craft lessons grounded in Chekhov and Mansfield. Paragraph exercises with scored AI feedback. A scene builder that chains your work into a whole.</div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[
-                { id: "theory", icon: "◈", title: "Theory Cards", sub: `${THEORY_CARDS.length} cards — paragraph craft, scene structure, act theory` },
-                { id: "exercises", icon: "✦", title: "Exercises", sub: "Seed prompts + AI-generated. Scored feedback with breakdown." },
+                { id: "lessons", icon: "◈", title: "Craft Lessons", sub: "16 lessons across paragraph, sentence, scene, and story — grounded in real literary examples." },
+                { id: "theory", icon: "▣", title: "Theory Cards", sub: `${THEORY_CARDS.length} flashcards on structure, act theory, and craft principles.` },
+                { id: "exercises", icon: "✦", title: "Write", sub: "Seed prompts, AI-generated exercises, and step-by-step paragraph building." },
                 { id: "scene", icon: "◎", title: "Scene Builder", sub: "Write freely. AI breaks into paragraphs and analyses structure.", full: true },
-                { id: "analysis", icon: "⊙", title: "Prose Autopsy", sub: "Paste your own work for scored analysis." },
+                { id: "analysis", icon: "⊙", title: "Prose Autopsy", sub: "Paste your own work for scored structural analysis." },
               ].map(card => (
                 <div key={card.id} onClick={() => setMode(card.id)}
                   style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 3, padding: "20px 18px", cursor: "pointer", gridColumn: card.full ? "1 / -1" : "auto" }}>
@@ -670,6 +1118,17 @@ export default function App() {
                 <div style={{ marginTop: 6, fontStyle: "normal", fontSize: 11, color: "#3a3530", letterSpacing: 1 }}>— Anton Chekhov</div>
               </div>
             </div>
+          </div>
+        )}
+
+        {mode === "lessons" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            <div>
+              <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Craft Lessons</div>
+              <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8", marginBottom: 4 }}>Theory & Practice</div>
+              <div style={{ fontSize: 13, color: DIM, lineHeight: 1.7 }}>Each lesson teaches one principle, then shows it at work in Chekhov or Mansfield.</div>
+            </div>
+            <LessonReader onXp={addXp} />
           </div>
         )}
 
@@ -697,14 +1156,12 @@ export default function App() {
 
         {mode === "exercises" && (
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
-              <div>
-                <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Exercises</div>
-                <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8" }}>Paragraph Practice</div>
-              </div>
+            <div>
+              <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Write</div>
+              <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8" }}>Paragraph Practice</div>
             </div>
-            <div style={{ display: "flex", gap: 2, borderBottom: `1px solid ${BORDER}`, paddingBottom: 0 }}>
-              {[["seed", "Seed Prompts"], ["generate", "Generate New"]].map(([id, label]) => (
+            <div style={{ display: "flex", gap: 2, borderBottom: `1px solid ${BORDER}` }}>
+              {[["seed", "Seed Prompts"], ["generate", "Generate New"], ["stepbystep", "Step by Step"]].map(([id, label]) => (
                 <button key={id} onClick={() => setExerciseTab(id)}
                   style={{ background: "none", border: "none", borderBottom: `2px solid ${exerciseTab === id ? G : "transparent"}`, color: exerciseTab === id ? G : DIM, padding: "8px 16px", cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", marginBottom: -1 }}>
                   {label}
@@ -724,9 +1181,8 @@ export default function App() {
                 <Exercise key={SEED_PROMPTS[promptIdx].id} prompt={SEED_PROMPTS[promptIdx]} apiKey={apiKey} model={model} onXp={addXp} history={history} onAddToScene={addToScene} />
               </div>
             )}
-            {exerciseTab === "generate" && (
-              <GenerateExercise apiKey={apiKey} model={model} history={history} onXp={addXp} onAddToScene={addToScene} />
-            )}
+            {exerciseTab === "generate" && <GenerateExercise apiKey={apiKey} model={model} history={history} onXp={addXp} onAddToScene={addToScene} />}
+            {exerciseTab === "stepbystep" && <StepParaExercise apiKey={apiKey} model={model} onXp={addXp} />}
           </div>
         )}
 
