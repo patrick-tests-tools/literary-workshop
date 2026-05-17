@@ -719,6 +719,8 @@ const LESSON_TRACKS = [
   { id: "sentence", label: "Sentence", icon: "—" },
   { id: "scene", label: "Scene", icon: "◎" },
   { id: "story", label: "Story", icon: "∞" },
+  { id: "voice", label: "Voice", icon: "~" },
+  { id: "dialogue", label: "Dialogue", icon: "«" },
 ];
 
 function LessonReader({ onXp }) {
