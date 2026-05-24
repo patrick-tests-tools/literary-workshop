@@ -229,6 +229,22 @@ The best endings in literary fiction stop slightly before the reader expects the
         text: `It was growing dusky as Laura shut their garden gates. A big dog ran by like a shadow. The road gleamed white, and down below in the hollow the little cottages were in deep shade. How quiet it seemed after the afternoon. Here she was going down the hill to somewhere where a man lay dead, and she couldn't realize it. Why couldn't she? She stopped a minute. And it seemed to her that kisses, voices, tinkling spoons, laughter, the smell of crushed grass were somehow inside her. She had no room for anything else. How strange!`,
         analysis: `Mansfield ends not with a statement about class or death or Laura's moral inadequacy, but with an image of the party's residue living inside Laura as she walks toward a dead man. "Kisses, voices, tinkling spoons, laughter, the smell of crushed grass" — the party is not behind her. It is in her body. "She had no room for anything else." Not an accusation. Not a judgment. An observation that holds both the terrible and the true. Then "How strange!" — Laura's voice, childlike and insufficient, which is the point.`
       }
+    },
+    {
+      id: "sc5",
+      title: "The Passage That Strengthens the Scene",
+      subtitle: "When lyric attention earns its place",
+      body: `A passage can pause action without pausing pressure. This is the difference between atmosphere that strengthens a scene and atmosphere that merely decorates it.
+
+The strong passage changes how the scene feels. It makes the want sharper, the obstacle more visible, the room more charged, the silence less empty. It may describe weather, furniture, light, an object, or a memory — but by the time the passage ends, the scene has more force than it had before.
+
+The weak passage asks to be admired separately from the scene. The strong passage makes the scene harder to leave.`,
+      principle: "A strong passage is not an escape from scene pressure. It is another way of increasing it.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `Laura wished now that she was not holding that piece of bread-and-butter, but there was nowhere to put it, and she couldn't possibly throw it away. She blushed and tried to look severe and even a little bit short-sighted as she came up to them.`,
+        analysis: `This is a small passage of attention, not a plot event. Yet it strengthens the scene because the bread-and-butter makes Laura's social position visible. She wants to perform authority, but the object in her hand keeps returning her to childishness, appetite, and embarrassment. The passage does not stop the scene; it pressurises it.`
+      }
     }
   ],
   story: [
@@ -480,8 +496,186 @@ The formal technique: after a line of dialogue that approaches something true, p
         analysis: `Gurov makes the only attempt in the story to speak his love to another person. He is answered with a comment about fish. But notice what Chekhov does with the structure: Gurov's opening — "If only you knew" — is itself an incomplete line. It is not a confession; it is the approach to a confession, the sentence before the sentence that would matter. And then the official drives away, and turns back, and the response is about sturgeon. The silence between what Gurov wanted to say and what was heard is the entirety of his isolation. Chekhov doesn't fill it. He just shows us what it sounds like when no one is listening.`
       }
     }
+  ],
+  pressure: [
+    {
+      id: "pr1",
+      title: "Pressure Is the Engine",
+      subtitle: "The force that makes prose move",
+      body: `Pressure is the felt force acting on a character, paragraph, or scene. It is not the same as conflict. Conflict is often visible: two people disagree, a train is missed, a secret is exposed. Pressure can be quieter: a question no one answers, a room where one person has more power, a memory the character keeps avoiding, a deadline approaching in the background.
+
+Literary fiction often works by applying pressure to a self-concept. A character thinks of herself as generous, controlled, innocent, dutiful, clever, immune. The scene presses on that story until contradiction appears.
+
+The reader does not need melodrama. The reader needs compression. Something must be at stake, and the prose must keep tightening around it.`,
+      principle: "Pressure is the narrowing of emotional room. The question is not only what happens, but what becomes harder for the character to keep believing.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `"It's wrong," she said. "You will be the first to despise me now." There was a water-melon on the table. Gurov cut himself a slice and began eating it without haste.`,
+        analysis: `The pressure is not loud. Anna's moral panic enters the room, and Gurov answers it with appetite. The gap between her crisis and his calm is the pressure system. The watermelon is not decoration; it makes the imbalance visible.`
+      }
+    },
+    {
+      id: "pr2",
+      title: "Tension Needs a Withheld Release",
+      subtitle: "Delay, deflect, interrupt",
+      body: `Tension begins when the reader knows what release would look like and the prose refuses to grant it yet. A confession is delayed. A question is answered sideways. A gesture nearly happens and is withdrawn. A character sees the truth and immediately looks at something else.
+
+The useful question is: what does this passage make the reader wait for? If the answer is nothing, the prose may be beautifully written and still slack.
+
+Delay does not mean padding. Every delay must add pressure. The detour should reveal character, deepen stakes, or change the reader's understanding of the moment.`,
+      principle: "Tension is shaped delay. Withhold the release, but make every withheld beat earn more pressure.",
+      example: {
+        source: "Katherine Mansfield, 'The Garden Party'",
+        text: `Here she was going down the hill to somewhere where a man lay dead, and she couldn't realize it. Why couldn't she?`,
+        analysis: `The tension lives in failed realization. Laura is moving toward death, but her mind cannot arrive there. The delayed recognition creates more force than a direct statement of grief would.`
+      }
+    },
+    {
+      id: "pr3",
+      title: "Escalation by Accumulation",
+      subtitle: "Small increases are usually stronger",
+      body: `Pressure usually rises by increments: a repeated word, a longer pause, a detail that returns with a different charge, a sentence that shortens after several long ones. The scene should feel as if the air has changed without the writer announcing that it has changed.
+
+The beginner's mistake is to escalate by adding event after event. The literary method is often to keep the external event small and increase the internal cost of staying there.
+
+Escalation asks for calibration. If the pressure jumps too suddenly, the scene feels manufactured. If it never rises, the scene goes flat. Each paragraph should alter the pressure by one clear degree.`,
+      principle: "Let each beat make the next beat harder. Escalation is pressure becoming less avoidable.",
+      example: {
+        source: "Chekhov, 'The Lady with the Dog'",
+        text: `She glanced at him and turned pale, then glanced again with horror, unable to believe her eyes, and tightly gripped the fan and the lorgnette in her hands, evidently struggling with herself not to faint.`,
+        analysis: `One sentence escalates through a sequence of physical registrations: glance, pallor, second glance, grip, effort not to faint. The pressure rises because each detail reduces her ability to stay composed.`
+      }
+    }
   ]
 };
+
+const LESSON_TAKEAWAYS = {
+  paragraph: {
+    title: "Paragraph Takeaways",
+    bullets: [
+      "A paragraph is one movement of attention, not a block of text.",
+      "The opening makes a promise; the ending should fulfil, complicate, or overturn it.",
+      "Concrete detail should carry emotion before the prose names anything.",
+      "Pressure belongs inside paragraphs too: each sentence should make the next one necessary."
+    ],
+    questions: [
+      "Where does this paragraph begin, and where does it arrive?",
+      "What pressure is stronger by the final sentence?",
+      "Which sentence explains what the details already show?",
+      "Could the paragraph gain force by cutting one abstract sentence?"
+    ]
+  },
+  sentence: {
+    title: "Sentence Takeaways",
+    bullets: [
+      "A sentence earns its place by doing a job no other sentence is doing.",
+      "Length is meaning: long sentences immerse; short sentences isolate and land.",
+      "Syntax can perform feeling instead of reporting feeling.",
+      "The strongest detail usually does two jobs at once."
+    ],
+    questions: [
+      "What does this sentence change?",
+      "Is its length creating the right pressure?",
+      "Could the syntax enact the feeling more precisely?",
+      "Which detail is only decorative?"
+    ]
+  },
+  scene: {
+    title: "Scene Takeaways",
+    bullets: [
+      "A scene needs want, obstacle, and change.",
+      "Begin close to pressure and orient through action.",
+      "Escalation can be quiet, but it must be felt.",
+      "A strong passage earns its place by increasing the charge of the scene around it."
+    ],
+    questions: [
+      "What does the character want right now?",
+      "What blocks or complicates that want?",
+      "Where does the pressure increase?",
+      "What has changed by the end that cannot be unchanged?"
+    ]
+  },
+  story: {
+    title: "Story Takeaways",
+    bullets: [
+      "Story begins when desire, pressure, and time meet.",
+      "Literary structure tracks psychological or relational change.",
+      "Loss, threatened identity, and avoidance often provide the deepest engine.",
+      "Act movement is about changed relation to the central tension."
+    ],
+    questions: [
+      "What is being lost or becoming impossible?",
+      "What truth is the character avoiding?",
+      "How does time narrow the options?",
+      "What changes in the character's relationship to the central tension?"
+    ]
+  },
+  voice: {
+    title: "Voice Takeaways",
+    bullets: [
+      "Voice lives in diction, syntax, register, and blind spots.",
+      "Free indirect discourse lets the narrator wear the character's language.",
+      "A rupture in register should reveal pressure.",
+      "The unreliable voice is strongest when the narrator does not know what they reveal."
+    ],
+    questions: [
+      "Which words belong to the character rather than the writer?",
+      "What can this voice not admit?",
+      "Where does the register break?",
+      "What does the narrator reveal accidentally?"
+    ]
+  },
+  dialogue: {
+    title: "Dialogue Takeaways",
+    bullets: [
+      "Dialogue is pressure, not information.",
+      "The surface subject should carry an unstated subject underneath.",
+      "Speech patterns are character patterns.",
+      "Silence after a true line can be more charged than another explanation."
+    ],
+    questions: [
+      "What does each character want from the other?",
+      "What is the real conversation beneath the surface one?",
+      "Which line approaches the truth and then retreats?",
+      "What would happen if the scene ended on silence instead of explanation?"
+    ]
+  },
+  pressure: {
+    title: "Pressure Takeaways",
+    bullets: [
+      "Pressure is the narrowing of emotional room.",
+      "Tension is created by shaped delay and withheld release.",
+      "Escalation is usually accumulation, not volume.",
+      "Every paragraph can increase, redirect, or release pressure."
+    ],
+    questions: [
+      "What is becoming harder to avoid?",
+      "What release is the reader waiting for?",
+      "Which beat increases pressure by one degree?",
+      "Where does the scene release pressure too early?"
+    ]
+  }
+};
+
+const SCENE_FOCUS_PASSAGE = `Four men in their shirt-sleeves stood grouped together on the garden path. They carried staves covered with rolls of canvas, and they had big tool-bags slung on their backs. They looked impressive. Laura wished now that she was not holding that piece of bread-and-butter, but there was nowhere to put it, and she couldn't possibly throw it away. She blushed and tried to look severe and even a little bit short-sighted as she came up to them.`;
+
+const SCENE_FOCUS_NOTES = {
+  sc1: "Want: Laura wants authority. Obstacle: her body and class innocence betray her. Change: the scene begins as arrangement and becomes exposure.",
+  sc2: "Orientation arrives through bodies, tools, bread-and-butter, and movement. Nothing waits for an establishing paragraph.",
+  sc3: "Pressure rises because the bread-and-butter makes Laura's social performance harder to sustain with each beat.",
+  sc4: "The passage could end on the blushing gesture because the gesture implies more than a summary of embarrassment would.",
+  sc5: "A passage strengthens a scene when atmosphere, object, and gesture increase the scene's pressure rather than pausing it."
+};
+
+const SCENE_PRINCIPLE_LABELS = [
+  ["engine", "Engine"],
+  ["pressure", "Pressure"],
+  ["implication", "Implication"],
+  ["detail", "Detail"],
+  ["rhythm", "Rhythm"],
+  ["subtext", "Subtext"],
+  ["change", "Change"]
+];
 
 // ─── STEP-BY-STEP PARAGRAPH EXERCISE ─────────────────────────────────────────
 
@@ -509,17 +703,115 @@ const PARA_STEPS = [
   },
   {
     id: "step4",
+    title: "Add Pressure",
+    instruction: "Now make the paragraph less static. Add or sharpen one element that increases pressure: a deadline, an unanswered question, an object that becomes charged, a silence that lengthens, a contradiction in the character's self-image, or a detail that makes the final sentence harder to avoid.",
+    prompt: "Rewrite the paragraph so the pressure is stronger by the end than it was at the beginning.",
+    hint: "Pressure does not require drama. It requires narrowing. What becomes harder for the character, or harder for the reader to ignore?"
+  },
+  {
+    id: "step5",
     title: "Cut What Explains",
     instruction: "Read through and find anything that names an emotion directly, or explains what a detail means, or summarises what the paragraph has already shown. Cut it. If cutting it makes the paragraph feel incomplete, add a detail — not an explanation.",
     prompt: "Paste the revised paragraph with all explanation removed.",
     hint: "The reader should feel the emotion without being told what it is. If you've cut too much and the paragraph feels empty, you need more concrete detail — not more explanation."
   },
   {
-    id: "step5",
+    id: "step6",
     title: "The Final Check",
-    instruction: "Read the paragraph one more time. Ask three questions: (1) Does it arrive somewhere different from where it began? (2) Is the emotion implied rather than stated? (3) Could any sentence be cut without losing something real? If yes, yes, no — the paragraph is working.",
+    instruction: "Read the paragraph one more time. Ask four questions: (1) Does it arrive somewhere different from where it began? (2) Is the emotion implied rather than stated? (3) Is the pressure stronger by the end? (4) Could any sentence be cut without losing something real? If yes, yes, yes, no — the paragraph is working.",
     prompt: "Write your final version. Then note: what did you learn from this paragraph that you will carry into the next one?",
     hint: "Good paragraphs teach you something about your own prose. What habit were you most tempted to fall back on? What did you resist?"
+  }
+];
+
+const EDITING_PHASES = [
+  {
+    id: "structure",
+    title: "Structure Pass",
+    goal: "Find the movement before touching the sentences.",
+    checks: [
+      "Mark the first and last sentence of each paragraph.",
+      "Name what changes in the paragraph or scene.",
+      "Cut or move any paragraph that repeats the same function.",
+      "Ask whether the scene has want, obstacle, and change."
+    ]
+  },
+  {
+    id: "pressure",
+    title: "Pressure Pass",
+    goal: "Make sure each beat tightens, redirects, or releases pressure deliberately.",
+    checks: [
+      "Underline the moment where pressure first appears.",
+      "Mark every place the prose releases pressure too early.",
+      "Add one unanswered question, charged object, silence, or contradiction.",
+      "Check that the final sentence is harder to arrive at than the first."
+    ]
+  },
+  {
+    id: "implication",
+    title: "Implication Pass",
+    goal: "Remove explanation the reader can assemble from evidence.",
+    checks: [
+      "Circle named emotions and replace them with gesture, object, or syntax.",
+      "Cut sentences that explain what a detail means.",
+      "Keep one gap the reader has to cross.",
+      "Ask whether the strongest feeling remains unstated."
+    ]
+  },
+  {
+    id: "line",
+    title: "Line Pass",
+    goal: "Tune rhythm, diction, and sentence pressure.",
+    checks: [
+      "Read aloud and mark every stumble.",
+      "Vary one sentence length for pace and one for emphasis.",
+      "Replace writerly words with the character's vocabulary.",
+      "End on the strongest image, gesture, or implication."
+    ]
+  },
+  {
+    id: "cut",
+    title: "Cut Pass",
+    goal: "Remove everything that performs no unique work.",
+    checks: [
+      "Cut throat-clearing openings and explanatory endings.",
+      "Delete any sentence that repeats the previous sentence's job.",
+      "Keep details that do two jobs; challenge details that only decorate.",
+      "Leave the piece slightly more pressurised than comfortable."
+    ]
+  }
+];
+
+const PRESSURE_STEPS = [
+  {
+    id: "pressure1",
+    title: "Name the Stable Belief",
+    instruction: "Write one sentence naming what the character believes they can keep intact: dignity, innocence, control, secrecy, politeness, certainty, or distance.",
+    prompt: "What self-image or strategy is about to come under pressure?"
+  },
+  {
+    id: "pressure2",
+    title: "Introduce the First Pressure",
+    instruction: "Write the first paragraph or beat. Add one small destabilising detail: a person watching, an object out of place, a time limit, a repeated question, or a silence.",
+    prompt: "Write the opening beat with pressure present but still manageable."
+  },
+  {
+    id: "pressure3",
+    title: "Deny the Release",
+    instruction: "Now withhold the easy release. Do not let the character explain, confess, leave, answer, or win too soon. Make the scene turn sideways.",
+    prompt: "Write the beat where release is delayed or deflected."
+  },
+  {
+    id: "pressure4",
+    title: "Increase by One Degree",
+    instruction: "Add a beat that makes the original belief harder to sustain. Keep it small and specific. Let the pressure rise through accumulation rather than spectacle.",
+    prompt: "Write the next beat with one clear increase in pressure."
+  },
+  {
+    id: "pressure5",
+    title: "End Before Explanation",
+    instruction: "End on an image, gesture, silence, or line of dialogue that leaves pressure alive. Do not summarise what the scene means.",
+    prompt: "Write the ending beat. Let the reader feel what remains unresolved."
   }
 ];
 
@@ -544,6 +836,9 @@ const THEORY_CARDS = [
   { id: "t16", category: "Scene Structure", front: "What must change by the end of a scene?", back: "Something must shift: the power between characters, a character's understanding, the emotional weather, or what the reader knows. A scene that ends in the same state it began is a missed opportunity." },
   { id: "t17", category: "Sentence Craft", front: "What makes a sentence in literary fiction 'earn' its length?", back: "A long sentence earns its length through rhythm, accumulation of precise detail, or mimicking the way thought/emotion actually moves. It should never be long because the writer was unsure where to stop." },
   { id: "t18", category: "Sentence Craft", front: "What is Chekhov's principle about detail?", back: "Every detail must do more than one job — it must simultaneously show character, advance atmosphere, and carry thematic weight. If a gun appears in Act 1, it must fire. Cut anything that only does one job." },
+  { id: "t19", category: "Pressure", front: "What is pressure in literary fiction?", back: "Pressure is the narrowing of emotional room. It is the force that makes a character's existing strategy, self-image, or avoidance pattern harder to sustain." },
+  { id: "t20", category: "Pressure", front: "How does tension differ from conflict?", back: "Conflict is often the visible clash. Tension is the shaped delay before release: a withheld answer, an interrupted gesture, a truth approached and avoided, or a scene refusing to resolve too soon." },
+  { id: "t21", category: "Revision", front: "What are the phases of editing a literary paragraph or scene?", back: "Structure first, then pressure, then implication, then line rhythm, then cuts. Editing fails when the writer tries to fix every layer at once." },
 ];
 
 const SEED_PROMPTS = [
@@ -553,6 +848,8 @@ const SEED_PROMPTS = [
   { id: "w4", level: "Paragraph", focus: "detail", title: "The Weight of an Object", instruction: "Write a paragraph built around a single ordinary object. The object must carry the scene's emotional weight. Do not name the emotion — let the object do the work.", criteria: ["Does the object carry the emotion?", "Is the emotion implied rather than stated?", "Could any word be cut?"] },
   { id: "w5", level: "Scene", focus: "subtext", title: "The Act 1 Opening", instruction: "Write an opening scene (80–120 words). Establish the character's ordinary world AND plant the first hint of what will destabilise it — without announcing either.", criteria: ["Do we feel the ordinary world?", "Is there a hint of tension or lack?", "Does the character's emotional position emerge?", "Is there forward pull?"] },
   { id: "w6", level: "Scene", focus: "rhythm", title: "The Compressed History", instruction: "Write a short scene (100–150 words) that implies a long history between two people without stating it. Give us the relationship's whole arc through what's not said and what's done habitually.", criteria: ["Does the relationship history feel implied, not explained?", "Is there tension under the surface?", "Does each paragraph move?"] },
+  { id: "w7", level: "Paragraph", focus: "pressure", title: "The Narrowing Room", instruction: "Write a paragraph in which a character enters a room believing they can remain composed. By the final sentence, something small should make that composure harder to maintain. Do not name the feeling.", criteria: ["Does pressure increase by one clear degree?", "Is the pressure carried by concrete detail?", "Does the final sentence make the opening less stable?"] },
+  { id: "w8", level: "Scene", focus: "tension", title: "The Delayed Answer", instruction: "Write a scene of 120–180 words built around one question that is not answered directly. Let each deflection reveal more of the relationship than the answer would.", criteria: ["Is the unanswered question felt throughout?", "Do the deflections reveal character?", "Does the scene end with pressure still alive?"] },
 ];
 
 const GROQ_MODELS = [
@@ -561,7 +858,7 @@ const GROQ_MODELS = [
   { id: "qwen-qwq-32b", label: "Qwen QwQ 32B (strong reasoning)" },
 ];
 
-const FOCUS_OPTIONS = ["random", "rhythm", "subtext", "interiority", "detail", "based on history"];
+const FOCUS_OPTIONS = ["random", "rhythm", "subtext", "interiority", "detail", "pressure", "tension", "based on history"];
 
 const GENERATE_EXERCISE_SYSTEM = `You are a literary fiction writing teacher in the tradition of Chekhov and Carver. Generate a single paragraph-level writing exercise.
 
@@ -569,12 +866,12 @@ Respond ONLY with a JSON object, no markdown, no preamble:
 {
   "title": "short evocative title",
   "level": "Paragraph" or "Scene",
-  "focus": one of: "rhythm", "subtext", "interiority", "detail",
+  "focus": one of: "rhythm", "subtext", "interiority", "detail", "pressure", "tension",
   "instruction": "precise 2-3 sentence instruction for what to write",
   "criteria": ["3-4 short evaluation criteria as questions"]
 }
 
-The exercise must target paragraph structure. Make the constraint specific and craft-focused.`;
+The exercise must target paragraph or scene structure. When the focus is pressure or tension, make the writer build pressure in stages rather than simply adding dramatic events. Make the constraint specific and craft-focused.`;
 
 const FEEDBACK_SYSTEM = `You are a literary fiction editor. Your feedback is objective, precise, and unsentimental.
 
@@ -617,6 +914,15 @@ Respond ONLY with a JSON object, no markdown:
     "what_changes": "what has shifted by the end, or 'nothing — this is a passage not a scene'",
     "central_issue": "the single most important structural problem",
     "next_paragraph": "a specific suggestion for what the next paragraph should do"
+  },
+  "principles": {
+    "engine": { "present": true, "evidence": ["short quoted moments"], "note": "want/obstacle/change diagnosis" },
+    "pressure": { "present": true, "evidence": ["short quoted moments"], "note": "how pressure rises, stalls, or releases too early" },
+    "implication": { "present": true, "evidence": ["short quoted moments"], "note": "where feeling is shown vs explained" },
+    "detail": { "present": true, "evidence": ["short quoted moments"], "note": "which details do structural work" },
+    "rhythm": { "present": true, "evidence": ["short quoted moments"], "note": "sentence and paragraph pacing" },
+    "subtext": { "present": true, "evidence": ["short quoted moments"], "note": "what is unsaid but active" },
+    "change": { "present": true, "evidence": ["short quoted moments"], "note": "what shifts by the end" }
   }
 }`;
 
@@ -721,6 +1027,7 @@ const LESSON_TRACKS = [
   { id: "story", label: "Story", icon: "∞" },
   { id: "voice", label: "Voice", icon: "~" },
   { id: "dialogue", label: "Dialogue", icon: "«" },
+  { id: "pressure", label: "Pressure", icon: "∆" },
 ];
 
 function LessonReader({ onXp }) {
@@ -729,10 +1036,12 @@ function LessonReader({ onXp }) {
   const [showExample, setShowExample] = useState(false);
 
   const lessons = LESSONS[track];
+  const isTakeaway = lessonIdx === lessons.length;
   const lesson = lessons[lessonIdx];
+  const takeaways = LESSON_TAKEAWAYS[track];
 
   const handleTrack = (t) => { setTrack(t); setLessonIdx(0); setShowExample(false); };
-  const handleNext = () => { if (lessonIdx < lessons.length - 1) { setLessonIdx(i => i + 1); setShowExample(false); onXp(8, null); } };
+  const handleNext = () => { if (lessonIdx < lessons.length) { setLessonIdx(i => i + 1); setShowExample(false); onXp(8, null); } };
   const handlePrev = () => { if (lessonIdx > 0) { setLessonIdx(i => i - 1); setShowExample(false); } };
 
   return (
@@ -747,13 +1056,35 @@ function LessonReader({ onXp }) {
       </div>
 
       <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-        {lessons.map((_, i) => (
+        {[...lessons, takeaways].map((_, i) => (
           <div key={i} onClick={() => { setLessonIdx(i); setShowExample(false); }}
             style={{ width: i === lessonIdx ? 20 : 6, height: 6, borderRadius: 3, background: i === lessonIdx ? G : i < lessonIdx ? "#3a3020" : "#1a1810", cursor: "pointer", transition: "all 0.3s" }} />
         ))}
-        <span style={{ marginLeft: 8, fontSize: 10, color: "#4a4438", letterSpacing: 1 }}>{lessonIdx + 1} / {lessons.length}</span>
+        <span style={{ marginLeft: 8, fontSize: 10, color: "#4a4438", letterSpacing: 1 }}>{lessonIdx + 1} / {lessons.length + 1}</span>
       </div>
 
+      {isTakeaway ? (
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          <div>
+            <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 6 }}>{LESSON_TRACKS.find(t => t.id === track)?.label} · Key Takeaways</div>
+            <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8", lineHeight: 1.3, marginBottom: 4 }}>{takeaways.title}</div>
+            <div style={{ fontSize: 13, color: DIM }}>Keep this slide open while drafting or revising.</div>
+          </div>
+          <div style={{ display: "grid", gap: 10 }}>
+            {takeaways.bullets.map((item) => (
+              <div key={item} style={{ background: "rgba(255,255,255,0.025)", border: `1px solid ${BORDER}`, borderRadius: 3, padding: "12px 14px", fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: MID }}>{item}</div>
+            ))}
+          </div>
+          <div style={{ background: "rgba(212,183,120,0.06)", border: `1px solid rgba(212,183,120,0.2)`, borderRadius: 3, padding: "18px 20px" }}>
+            <div style={{ fontSize: 9, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 12 }}>Questions to Ask While Writing</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {takeaways.questions.map((q) => (
+                <div key={q} style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.6, color: "#e0d4b0" }}>{q}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
         <div>
           <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 6 }}>{LESSON_TRACKS.find(t => t.id === track)?.label} · Lesson {lessonIdx + 1}</div>
@@ -767,6 +1098,14 @@ function LessonReader({ onXp }) {
           <div style={{ fontSize: 9, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 8 }}>Core Principle</div>
           <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: "#e0d4b0", fontStyle: "italic" }}>{lesson.principle}</div>
         </div>
+
+        {track === "scene" && (
+          <div style={{ background: "rgba(0,0,0,0.25)", border: `1px solid ${BORDER}`, borderRadius: 3, padding: "16px 18px" }}>
+            <div style={{ fontSize: 9, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 10 }}>Full Scene Focus</div>
+            <div style={{ fontFamily: "'Lora', serif", fontSize: 13, lineHeight: 1.75, color: "#8f8676", fontStyle: "italic", marginBottom: 12 }}>{SCENE_FOCUS_PASSAGE}</div>
+            <div style={{ borderLeft: `2px solid rgba(212,183,120,0.3)`, paddingLeft: 12, fontSize: 13, lineHeight: 1.65, color: "#b0a898" }}>{SCENE_FOCUS_NOTES[lesson.id]}</div>
+          </div>
+        )}
 
         <div>
           <button onClick={() => setShowExample(e => !e)}
@@ -785,14 +1124,15 @@ function LessonReader({ onXp }) {
           )}
         </div>
       </div>
+      )}
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 8, borderTop: `1px solid ${BORDER}` }}>
         <button onClick={handlePrev} disabled={lessonIdx === 0}
           style={{ background: "none", border: `1px solid ${lessonIdx === 0 ? "transparent" : BORDER}`, color: lessonIdx === 0 ? "#2a2520" : DIM, padding: "8px 20px", borderRadius: 2, cursor: lessonIdx === 0 ? "not-allowed" : "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
           ← Prev
         </button>
-        <button onClick={handleNext} disabled={lessonIdx === lessons.length - 1}
-          style={{ background: lessonIdx < lessons.length - 1 ? "#3a2e18" : "none", border: `1px solid ${lessonIdx < lessons.length - 1 ? "rgba(212,183,120,0.3)" : "transparent"}`, color: lessonIdx < lessons.length - 1 ? G : "#2a2520", padding: "8px 20px", borderRadius: 2, cursor: lessonIdx < lessons.length - 1 ? "pointer" : "not-allowed", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+        <button onClick={handleNext} disabled={lessonIdx === lessons.length}
+          style={{ background: lessonIdx < lessons.length ? "#3a2e18" : "none", border: `1px solid ${lessonIdx < lessons.length ? "rgba(212,183,120,0.3)" : "transparent"}`, color: lessonIdx < lessons.length ? G : "#2a2520", padding: "8px 20px", borderRadius: 2, cursor: lessonIdx < lessons.length ? "pointer" : "not-allowed", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
           Next →
         </button>
       </div>
@@ -820,7 +1160,7 @@ function StepParaExercise({ apiKey, model, onXp }) {
   setLoading(true); setError(null);
   try {
     if (stepIdx === PARA_STEPS.length - 1) {
-      const raw = await callGroq(apiKey, model, FEEDBACK_SYSTEM, `Exercise: "Step-by-Step Paragraph"\nInstruction: Final paragraph — all five elements applied.\nCriteria: Movement from opening to close; emotion implied not stated; rhythm varied; no explanation of what the paragraph shows.\n\nSubmission:\n\n${draft}`);
+      const raw = await callGroq(apiKey, model, FEEDBACK_SYSTEM, `Exercise: "Step-by-Step Paragraph"\nInstruction: Final paragraph — all six elements applied.\nCriteria: Movement from opening to close; pressure increases; emotion implied not stated; rhythm varied; no explanation of what the paragraph shows.\n\nSubmission:\n\n${draft}`);
       const data = parseJSON(raw);
       setFeedbacks(f => ({ ...f, [step.id]: data }));
       onXp(data.total ? Math.round(data.total / 2) : 10, { ...data, central_issue: data.central_issue });
@@ -839,7 +1179,7 @@ function StepParaExercise({ apiKey, model, onXp }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
       <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>
-        Build a paragraph one element at a time. Work through all five steps with the same paragraph — each step focuses on a single craft principle.
+        Build a paragraph one element at a time. Work through all six steps with the same paragraph — each step focuses on a single craft principle, including pressure.
       </div>
 
       <div style={{ display: "flex", gap: 0 }}>
@@ -910,13 +1250,115 @@ function StepParaExercise({ apiKey, model, onXp }) {
       {stepIdx === PARA_STEPS.length - 1 && feedback && (
         <div style={{ background: "rgba(212,183,120,0.06)", border: `1px solid rgba(212,183,120,0.2)`, borderRadius: 3, padding: "20px", textAlign: "center" }}>
           <div style={{ fontFamily: "'Lora', serif", fontSize: 16, color: G, marginBottom: 8 }}>Paragraph complete.</div>
-          <div style={{ fontSize: 13, color: DIM, lineHeight: 1.7 }}>You've worked through all five elements. Start again with a new paragraph.</div>
+          <div style={{ fontSize: 13, color: DIM, lineHeight: 1.7 }}>You've worked through all six elements. Start again with a new paragraph.</div>
           <button onClick={() => { setStepIdx(0); setDrafts({}); setFeedbacks({}); }}
             style={{ marginTop: 16, background: "none", border: `1px solid ${BORDER}`, color: DIM, padding: "8px 20px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
             Start New Paragraph
           </button>
         </div>
       )}
+    </div>
+  );
+}
+
+function EditingPractice() {
+  const [phaseIdx, setPhaseIdx] = useState(0);
+  const [draft, setDraft] = useState("");
+  const [checked, setChecked] = useState({});
+  const phase = EDITING_PHASES[phaseIdx];
+  const wc = draft.trim().split(/\s+/).filter(Boolean).length;
+
+  const toggleCheck = (item) => {
+    setChecked((prev) => ({ ...prev, [phase.id]: { ...(prev[phase.id] || {}), [item]: !prev[phase.id]?.[item] } }));
+  };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>
+        Paste a draft and revise in passes. Work top-down: structure, pressure, implication, line, then cuts.
+      </div>
+      <textarea value={draft} onChange={e => setDraft(e.target.value)} placeholder="Paste a paragraph or scene draft here..." rows={9}
+        style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${BORDER}`, borderRadius: 3, color: "#e0d8cc", fontFamily: "'Lora', serif", fontSize: 16, lineHeight: 1.8, padding: "16px", resize: "vertical", outline: "none", width: "100%", boxSizing: "border-box" }} />
+      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+        {EDITING_PHASES.map((p, i) => (
+          <button key={p.id} onClick={() => setPhaseIdx(i)}
+            style={{ background: phaseIdx === i ? "rgba(212,183,120,0.12)" : "none", border: `1px solid ${phaseIdx === i ? "rgba(212,183,120,0.3)" : BORDER}`, color: phaseIdx === i ? G : DIM, padding: "7px 12px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase" }}>
+            {p.title}
+          </button>
+        ))}
+        <span style={{ marginLeft: "auto", fontSize: 11, color: "#4a4438" }}>{wc} words</span>
+      </div>
+      <div style={{ background: "rgba(0,0,0,0.3)", border: `1px solid ${BORDER}`, borderRadius: 3, padding: "20px" }}>
+        <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 8 }}>Editing Phase {phaseIdx + 1}</div>
+        <div style={{ fontFamily: "'Lora', serif", fontSize: 18, color: "#e0d8c8", marginBottom: 8 }}>{phase.title}</div>
+        <div style={{ fontSize: 14, color: MID, lineHeight: 1.7, marginBottom: 16 }}>{phase.goal}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {phase.checks.map((item) => (
+            <label key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, cursor: "pointer", color: checked[phase.id]?.[item] ? "#7f765f" : "#b0a898", fontSize: 14, lineHeight: 1.55 }}>
+              <input type="checkbox" checked={!!checked[phase.id]?.[item]} onChange={() => toggleCheck(item)}
+                style={{ marginTop: 3, accentColor: G }} />
+              <span>{item}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PressureExercise({ onAddToScene }) {
+  const [stepIdx, setStepIdx] = useState(0);
+  const [drafts, setDrafts] = useState({});
+  const step = PRESSURE_STEPS[stepIdx];
+  const draft = drafts[step.id] || "";
+  const combined = PRESSURE_STEPS.map((s) => drafts[s.id]).filter(Boolean).join("\n\n");
+  const wc = draft.trim().split(/\s+/).filter(Boolean).length;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>
+        Build pressure in stages. Use the same character and situation all the way through, adding one degree of tension at a time.
+      </div>
+      <div style={{ display: "flex", gap: 0 }}>
+        {PRESSURE_STEPS.map((s, i) => (
+          <div key={s.id} onClick={() => setStepIdx(i)}
+            style={{ flex: 1, padding: "8px 0", textAlign: "center", cursor: "pointer", borderBottom: `2px solid ${i === stepIdx ? G : drafts[s.id] ? "#3a3020" : "#1a1810"}`, transition: "border-color 0.2s" }}>
+            <div style={{ fontSize: 10, color: i === stepIdx ? G : drafts[s.id] ? "#6a5a30" : "#2a2520", letterSpacing: 1 }}>{i + 1}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ background: "rgba(0,0,0,0.3)", border: `1px solid ${BORDER}`, borderRadius: 3, padding: "20px" }}>
+        <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 8 }}>Pressure Step {stepIdx + 1} of {PRESSURE_STEPS.length}</div>
+        <div style={{ fontFamily: "'Lora', serif", fontSize: 18, color: "#e0d8c8", marginBottom: 12 }}>{step.title}</div>
+        <div style={{ fontSize: 14, color: MID, lineHeight: 1.75 }}>{step.instruction}</div>
+      </div>
+      {stepIdx > 0 && combined && (
+        <div style={{ borderLeft: `2px solid #2a2520`, paddingLeft: 16 }}>
+          <div style={{ fontSize: 10, letterSpacing: 2, color: "#3a3028", textTransform: "uppercase", marginBottom: 6 }}>Scene so far</div>
+          <div style={{ fontFamily: "'Lora', serif", fontSize: 13, color: "#5f5648", lineHeight: 1.7, whiteSpace: "pre-line" }}>{combined}</div>
+        </div>
+      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <div style={{ fontSize: 10, letterSpacing: 2, color: DIM, textTransform: "uppercase" }}>{step.prompt}</div>
+        <textarea value={draft} onChange={e => setDrafts(d => ({ ...d, [step.id]: e.target.value }))} rows={6}
+          style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${BORDER}`, borderRadius: 3, color: "#e0d8cc", fontFamily: "'Lora', serif", fontSize: 16, lineHeight: 1.8, padding: "16px", resize: "vertical", outline: "none", width: "100%", boxSizing: "border-box" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
+          {stepIdx < PRESSURE_STEPS.length - 1 ? (
+            <button onClick={() => setStepIdx(i => i + 1)} disabled={!draft.trim()}
+              style={{ background: draft.trim() ? "#3a2e18" : "#1a1510", color: draft.trim() ? G : "#3a3028", border: `1px solid ${draft.trim() ? "rgba(212,183,120,0.3)" : "transparent"}`, padding: "10px 20px", borderRadius: 2, cursor: draft.trim() ? "pointer" : "not-allowed", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+              Next Step →
+            </button>
+          ) : (
+            <button onClick={() => onAddToScene(combined)} disabled={!combined.trim()}
+              style={{ background: combined.trim() ? "rgba(212,183,120,0.08)" : "#1a1510", color: combined.trim() ? G : "#3a3028", border: `1px solid ${combined.trim() ? "rgba(212,183,120,0.2)" : "transparent"}`, padding: "10px 20px", borderRadius: 2, cursor: combined.trim() ? "pointer" : "not-allowed", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>
+              Add to Scene Autopsy
+            </button>
+          )}
+          <button onClick={() => { setStepIdx(0); setDrafts({}); }}
+            style={{ background: "none", border: `1px solid #2a2520`, color: DIM, padding: "10px 16px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase" }}>Reset</button>
+          <span style={{ marginLeft: "auto", fontSize: 11, color: "#4a4438" }}>{wc} words</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -1044,7 +1486,7 @@ function GenerateExercise({ apiKey, model, history, onXp, onAddToScene }) {
     try {
       const historyCtx = history.length > 0 && focus === "based on history"
         ? `The writer has struggled with: ${history.slice(-5).map(h => h.central_issue).filter(Boolean).join("; ")}. Target their weakest area.`
-        : focus === "random" ? "Choose any focus — rhythm, subtext, interiority, or detail." : `Focus specifically on: ${focus}.`;
+        : focus === "random" ? "Choose any focus — rhythm, subtext, interiority, detail, pressure, or tension." : `Focus specifically on: ${focus}.`;
       const raw = await callGroq(apiKey, model, GENERATE_EXERCISE_SYSTEM, historyCtx);
       const data = parseJSON(raw);
       setGenerated({ ...data, id: `gen-${Date.now()}` });
@@ -1082,6 +1524,7 @@ function GenerateExercise({ apiKey, model, history, onXp, onAddToScene }) {
 function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
   const [text, setText] = useState(sceneBuffer || "");
   const [analysis, setAnalysis] = useState(null);
+  const [activePrinciples, setActivePrinciples] = useState(() => Object.fromEntries(SCENE_PRINCIPLE_LABELS.map(([id]) => [id, true])));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -1099,10 +1542,11 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
   };
 
   const wc = text.trim().split(/\s+/).filter(Boolean).length;
+  const togglePrinciple = (id) => setActivePrinciples((prev) => ({ ...prev, [id]: !prev[id] }));
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>Write or paste your scene. The AI breaks it into paragraphs, analyses each one's structural function, and scores the whole.{sceneBuffer && <span style={{ color: G }}> Exercise paragraphs have been added.</span>}</div>
+      <div style={{ fontSize: 14, color: DIM, lineHeight: 1.7 }}>Write or paste your scene. The AI breaks it into paragraphs, autopsies the core principles, and lets you isolate one craft layer at a time.{sceneBuffer && <span style={{ color: G }}> Exercise paragraphs have been added.</span>}</div>
       <textarea value={text} onChange={e => { setText(e.target.value); setSceneBuffer(e.target.value); }} placeholder="Write or paste your scene here…" rows={12}
         style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${BORDER}`, borderRadius: 3, color: "#e0d8cc", fontFamily: "'Lora', serif", fontSize: 16, lineHeight: 1.85, padding: "16px", resize: "vertical", outline: "none", width: "100%", boxSizing: "border-box" }} />
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -1116,6 +1560,39 @@ function SceneBuilder({ apiKey, model, onXp, sceneBuffer, setSceneBuffer }) {
       {error && <div style={{ background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.2)", borderRadius: 3, padding: "14px 18px", fontSize: 13, color: "#f87171" }}>{error}</div>}
       {analysis && (
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          <div>
+            <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 12 }}>Scene Autopsy Toggles</div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+              {SCENE_PRINCIPLE_LABELS.map(([id, label]) => (
+                <button key={id} onClick={() => togglePrinciple(id)}
+                  style={{ background: activePrinciples[id] ? "rgba(212,183,120,0.12)" : "none", border: `1px solid ${activePrinciples[id] ? "rgba(212,183,120,0.3)" : BORDER}`, color: activePrinciples[id] ? G : DIM, padding: "6px 12px", borderRadius: 2, cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase" }}>
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div style={{ display: "grid", gap: 10 }}>
+              {SCENE_PRINCIPLE_LABELS.filter(([id]) => activePrinciples[id]).map(([id, label]) => {
+                const principle = analysis.principles?.[id];
+                const fallback = id === "engine" ? analysis.scene?.engine : id === "change" ? analysis.scene?.what_changes : analysis.scene?.scores?.[id] !== undefined ? `${analysis.scene.scores[id]}/25` : null;
+                return (
+                  <div key={id} style={{ background: "rgba(0,0,0,0.25)", border: `1px solid ${principle?.present === false ? "rgba(248,113,113,0.18)" : BORDER}`, borderRadius: 3, padding: "14px 16px" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", gap: 10, marginBottom: 8 }}>
+                      <div style={{ fontSize: 10, letterSpacing: 2, color: G, textTransform: "uppercase" }}>{label}</div>
+                      {principle && <div style={{ fontSize: 10, color: principle.present ? "#4ade80" : "#f87171" }}>{principle.present ? "present" : "weak / missing"}</div>}
+                    </div>
+                    <div style={{ fontFamily: "'Lora', serif", fontSize: 14, lineHeight: 1.7, color: "#b0a898" }}>{principle?.note || fallback || "No focused note returned for this layer."}</div>
+                    {principle?.evidence?.length > 0 && (
+                      <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 10 }}>
+                        {principle.evidence.map((quote, i) => (
+                          <div key={`${id}-${i}`} style={{ fontSize: 12, color: "#7a7060", fontStyle: "italic", borderLeft: `2px solid rgba(212,183,120,0.22)`, paddingLeft: 10 }}>"{quote}"</div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
           <div>
             <div style={{ fontSize: 10, letterSpacing: 3, color: G, textTransform: "uppercase", marginBottom: 16 }}>Paragraph Breakdown</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1293,14 +1770,14 @@ export default function App() {
             <div>
               <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 14 }}>Daily Practice</div>
               <div style={{ fontFamily: "'Lora', serif", fontSize: 24, color: "#e8dfc8", lineHeight: 1.4, marginBottom: 10 }}>Write every day.<br />See every sentence.</div>
-              <div style={{ fontSize: 14, color: "#6a6050", lineHeight: 1.75 }}>Craft lessons grounded in Chekhov and Mansfield. Paragraph exercises with scored AI feedback. A scene builder that chains your work into a whole.</div>
+              <div style={{ fontSize: 14, color: "#6a6050", lineHeight: 1.75 }}>Craft lessons grounded in Chekhov and Mansfield. Paragraph, pressure, and editing exercises with scored AI feedback. A scene autopsy that chains your work into a whole.</div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[
-                { id: "lessons", icon: "◈", title: "Craft Lessons", sub: "16 lessons across paragraph, sentence, scene, and story — grounded in real literary examples." },
+                { id: "lessons", icon: "◈", title: "Craft Lessons", sub: "Lessons across paragraph, sentence, scene, story, voice, dialogue, and pressure — with key takeaway slides." },
                 { id: "theory", icon: "▣", title: "Theory Cards", sub: `${THEORY_CARDS.length} flashcards on structure, act theory, and craft principles.` },
-                { id: "exercises", icon: "✦", title: "Write", sub: "Seed prompts, AI-generated exercises, and step-by-step paragraph building." },
-                { id: "scene", icon: "◎", title: "Scene Builder", sub: "Write freely. AI breaks into paragraphs and analyses structure.", full: true },
+                { id: "exercises", icon: "✦", title: "Write", sub: "Seed prompts, AI-generated exercises, editing passes, and step-by-step paragraph and pressure building." },
+                { id: "scene", icon: "◎", title: "Scene Autopsy", sub: "Paste a full scene. AI highlights engine, pressure, implication, detail, rhythm, subtext, and change.", full: true },
                 { id: "analysis", icon: "⊙", title: "Prose Autopsy", sub: "Paste your own work for scored structural analysis." },
               ].map(card => (
                 <div key={card.id} onClick={() => setMode(card.id)}
@@ -1357,10 +1834,10 @@ export default function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div>
               <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Write</div>
-              <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8" }}>Paragraph Practice</div>
+              <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8" }}>Writing Practice</div>
             </div>
             <div style={{ display: "flex", gap: 2, borderBottom: `1px solid ${BORDER}` }}>
-              {[["seed", "Seed Prompts"], ["generate", "Generate New"], ["stepbystep", "Step by Step"]].map(([id, label]) => (
+              {[["seed", "Seed Prompts"], ["generate", "Generate New"], ["stepbystep", "Paragraph"], ["pressure", "Pressure"], ["editing", "Editing"]].map(([id, label]) => (
                 <button key={id} onClick={() => setExerciseTab(id)}
                   style={{ background: "none", border: "none", borderBottom: `2px solid ${exerciseTab === id ? G : "transparent"}`, color: exerciseTab === id ? G : DIM, padding: "8px 16px", cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", marginBottom: -1 }}>
                   {label}
@@ -1382,6 +1859,8 @@ export default function App() {
             )}
             {exerciseTab === "generate" && <GenerateExercise apiKey={apiKey} model={model} history={history} onXp={addXp} onAddToScene={addToScene} />}
             {exerciseTab === "stepbystep" && <StepParaExercise apiKey={apiKey} model={model} onXp={addXp} />}
+            {exerciseTab === "pressure" && <PressureExercise onAddToScene={addToScene} />}
+            {exerciseTab === "editing" && <EditingPractice />}
           </div>
         )}
 
@@ -1389,7 +1868,7 @@ export default function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             <div>
               <div style={{ fontFamily: "'Raleway', sans-serif", fontSize: 10, letterSpacing: 4, color: DIM, textTransform: "uppercase", marginBottom: 8 }}>Scene Builder</div>
-              <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8", marginBottom: 4 }}>Build & Analyse a Scene</div>
+              <div style={{ fontFamily: "'Lora', serif", fontSize: 22, color: "#e0d8c8", marginBottom: 4 }}>Scene Autopsy</div>
             </div>
             <SceneBuilder apiKey={apiKey} model={model} onXp={addXp} sceneBuffer={sceneBuffer} setSceneBuffer={setSceneBuffer} />
           </div>
